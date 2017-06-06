@@ -63,8 +63,8 @@
   
     <article id="post-module" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/03/31/module/" class="article-date">
-  <time datetime="2017-03-31T15:14:09.578Z" itemprop="datePublished">2017-03-31</time>
+    <a href="/2017/06/06/module/" class="article-date">
+  <time datetime="2017-06-06T08:05:58.351Z" itemprop="datePublished">2017-06-06</time>
 </a>
     
   </div>
@@ -75,7 +75,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/31/module/">模块化开发</a>
+      <a class="article-title" href="/2017/06/06/module/">模块化开发</a>
     </h1>
   
 
@@ -163,14 +163,144 @@
 </ul>
 </li>
 </ul>
-<h4 id="使用案例"><a href="#使用案例" class="headerlink" title="使用案例"></a>使用案例</h4><ul>
-<li>Tab标签页</li>
-</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/31/module/" data-id="cj0y05xjd0001ckkurxfpx6sn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/06/module/" data-id="cj3lqwepu0001wkkusri2b05n" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-webpacrk入门总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/06/webpacrk入门总结/" class="article-date">
+  <time datetime="2017-06-06T08:03:50.000Z" itemprop="datePublished">2017-06-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/06/webpacrk入门总结/">webpacrk入门总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="什么是webpack"><a href="#什么是webpack" class="headerlink" title="什么是webpack"></a>什么是webpack</h2><blockquote>
+<p>webpakc可以看作是一个模块打包机,可以分析你的项目结构,帮你自动处理一些文件,如压缩、转化等,最终转化为适合浏览器使用的格式。</p>
+</blockquote>
+<h2 id="webpack与gulp工作方式的区别"><a href="#webpack与gulp工作方式的区别" class="headerlink" title="webpack与gulp工作方式的区别"></a>webpack与gulp工作方式的区别</h2><p>gulp:在一个配置文件中,指明对某些文件进行一些操作(编译,组合,压缩等)步骤之后,这个工具可以自动帮你处理这些文件</p>
+<blockquote>
+<p>工作流程如下</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/1031000-d0693c06bb3a00e3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/600" alt="gulp的工作流程"></p>
+<p>webpack:通过指定的一个入口文件,webpack会从这个文件开始找到你项目所有的依赖文件,使用loaders处理它们,最后打包成一个浏览器可识别的JS(bundle.js)文件</p>
+<blockquote>
+<p>工作流程如下</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/1031000-160bc667d3b6093a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/600" alt="webpack的工作流程"></p>
+<h2 id="webpack的使用"><a href="#webpack的使用" class="headerlink" title="webpack的使用"></a>webpack的使用</h2><p>安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//全局安装</div><div class="line">npm install -g webpack</div><div class="line">//安装到你的项目目录</div><div class="line">npm instakk --save-dev webpack</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>假设项目结构如图所示</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/1031000-976ba1a06fd0702f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="项目结构"></p>
+<h2 id="执行webpack的几种方法"><a href="#执行webpack的几种方法" class="headerlink" title="执行webpack的几种方法"></a>执行webpack的几种方法</h2><blockquote>
+<ol>
+<li>终端输入</li>
+</ol>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">webpack entry file(入口文件的位置) bundled file(存放生成的bundle.js的位置) </div><div class="line"></div><div class="line">//按上面项目结构走</div><div class="line">//webpack非全局安装时(全局安装时可省略node_modules/.bin)</div><div class="line">node_modules/.bin/webpack app/main.js public/bundle.js</div></pre></td></tr></table></figure>
+<blockquote>
+<ol>
+<li>通过配置文件来使用webpack</li>
+</ol>
+</blockquote>
+<p>在项目的根目录下建一个名为webpack.config.js的配置文件(本质上是一个JS模块),可以把所有与构建相关的信息放在里面</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">module.exports = &#123;</div><div class="line">  entry:  __dirname + &quot;/app/main.js&quot;,//唯一入口文件</div><div class="line">  output: &#123;</div><div class="line">    path: __dirname + &quot;/public&quot;,//打包后的文件存放的地方</div><div class="line">    filename: &quot;bundle.js&quot;//打包后输出文件的文件名</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<ol>
+<li>通过配置package.json文件使用webpack</li>
+</ol>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  &quot;name&quot;: &quot;webpack-sample-project&quot;,</div><div class="line">  &quot;version&quot;: &quot;1.0.0&quot;,</div><div class="line">  &quot;description&quot;: &quot;Sample webpack project&quot;,</div><div class="line">  &quot;scripts&quot;: &#123;</div><div class="line">    &quot;start&quot;: &quot;webpack&quot;,</div><div class="line">	&quot;comment&quot;: &quot;相当于把npm的start命令指向webpack&quot;</div><div class="line">  &#125;,</div><div class="line">  &quot;author&quot;: &quot;Silence_JK&quot;,</div><div class="line">  &quot;license&quot;: &quot;ISC&quot;,</div><div class="line">  &quot;devDependencies&quot;: &#123;</div><div class="line">    &quot;webpack&quot;: &quot;^2.6.1&quot;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>注：package.json中的脚本部分已默认在命令前添加node_modules/.bin,So don’t worry是否在全局安装了webpack</p>
+</blockquote>
+<h2 id="webpack的一些常用功能"><a href="#webpack的一些常用功能" class="headerlink" title="webpack的一些常用功能"></a>webpack的一些常用功能</h2><blockquote>
+<p>生成Source Maps(报错时方便调试,google浏览器中setting-&gt;勾选Enalbe JS source map),在wepack的配置文件中配置devtool选项即可</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>devtoo选项</th>
+<th style="text-align:left">配置结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>source-map</td>
+<td style="text-align:left">在一个单独的文件中产生一个完整且功能完全的文件。这个文件具有最好的source map，但是它会减慢打包文件的构建速度；</td>
+</tr>
+<tr>
+<td>cheap-module-source-map</td>
+<td style="text-align:left">在一个单独的文件中生成一个不带列映射的map，不带列映射提高项目构建速度，但是也使得浏览器开发者工具只能对应到具体的行，不能对应到具体的列（符号），会对调试造成不便；</td>
+</tr>
+<tr>
+<td>eval-source-map</td>
+<td style="text-align:left">使用eval打包源文件模块，在同一个文件中生成干净的完整的source map。这个选项可以在不影响构建速度的前提下生成完整的sourcemap，但是对打包后输出的JS文件的执行具有性能和安全的隐患。不过在开发阶段这是一个非常好的选项，但是在生产阶段一定不要用这个选项；</td>
+</tr>
+<tr>
+<td>cheap-module-eval-source-map</td>
+<td style="text-align:left">这是在打包文件时最快的生成source map的方法，生成的Source Map 会和打包后的JavaScript文件同行显示，没有列映射，和eval-source-map选项具有相似的缺点；</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>loaders</p>
+</blockquote>
+<p>通过使用不同的loader，webpack通过调用外部的脚本或工具可以对各种各样的格式的文件进行处理，比如将JSON文件转换为JavaScript文件,将下一代的JS文件（ES6，ES7)转换为现代浏览器可以识别的JS文件,对React的开发而言,合适的Loaders可以把React的JSX文件转换为JS文件。</p>
+<p>loaders需要单独安装并且要在webpack.config.js下的module下配置<br>常用配置项包括以下几个:</p>
+<ul>
+<li>test：一个匹配loaders所处理的文件的拓展名的正则表达式（必须）</li>
+<li>loader：loader的名称（必须）</li>
+<li>include/exclude:手动添加必须处理的文件（文件夹）或屏蔽不需要处理的文件（文件夹）（可选）；</li>
+<li>query：为loaders提供额外的设置选项（可选）</li>
+</ul>
+<p>例如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">//安装可以转换JSON的loader</div><div class="line">npm install --save-dev json-loader</div><div class="line"></div><div class="line">//配置</div><div class="line">module.exports = &#123;</div><div class="line">  devtool: &apos;eval-source-map&apos;,</div><div class="line"></div><div class="line">  entry:  __dirname + &quot;/app/main.js&quot;,</div><div class="line">  output: &#123;</div><div class="line">    path: __dirname + &quot;/public&quot;,</div><div class="line">    filename: &quot;bundle.js&quot;</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  module: &#123;//在配置文件里添加JSON loader</div><div class="line">    loaders: [</div><div class="line">      &#123;</div><div class="line">        test: /\.json$/,</div><div class="line">        loader: &quot;json&quot;</div><div class="line">      &#125;</div><div class="line">    ]</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  devServer: &#123;</div><div class="line">    contentBase: &quot;./public&quot;,</div><div class="line">    colors: true,</div><div class="line">    historyApiFallback: true,</div><div class="line">    inline: true</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>插件(Plugins)<br>插件（Plugins）是用来拓展Webpack功能的，它们会在整个构建过程中生效，执行相关的任务。<br>Loaders和Plugins是完全不同的东西</p>
+<ul>
+<li>loaders是在打包构建过程中用来处理源文件的（JSX，Scss，Less..），一次处理一个</li>
+<li>插件并不直接操作单个文件，它直接对整个构建过程其作用。</li>
+</ul>
+</blockquote>
+<p>Webpack有很多内置插件，同时也有很多第三方插件，可以让我们完成更加丰富的功能。</p>
+<blockquote>
+<p>使用插件的方法</p>
+</blockquote>
+<p>要使用某个插件，我们需要通过npm安装它，然后要做的就是在webpack配置中的plugins关键字部分添加该插件的一个实例（plugins是一个数组）继续看例子，我们添加了一个实现版权声明的插件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">//webpack.config.js</div><div class="line">var webpack = require(&apos;webpack&apos;);</div><div class="line"></div><div class="line">module.exports = &#123;</div><div class="line">  devtool: &apos;eval-source-map&apos;,</div><div class="line">  entry:  __dirname + &quot;/app/main.js&quot;,</div><div class="line">  output: &#123;...&#125;,</div><div class="line"></div><div class="line">  module: &#123;</div><div class="line">    loaders: [</div><div class="line">      &#123; test: /\.json$/, loader: &quot;json&quot; &#125;</div><div class="line">    ]</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  plugins: [</div><div class="line">    new webpack.BannerPlugin(&quot;Copyright Flying Unicorns inc.&quot;)//在这个数组中new一个就可以了</div><div class="line">  ],</div><div class="line"></div><div class="line">  devServer: &#123;...&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>查看使用此插件后的JS打包文件localhost:8080/bundle.js</p>
+</blockquote>
+<p>参考文章: <a href="http://www.jianshu.com/p/42e11515c10f" target="_blank" rel="external">入门webpack,看这篇就够了</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/06/06/webpacrk入门总结/" data-id="cj3lqwepf0000wkkuf6e997nw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -387,7 +517,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/13/node/" data-id="cj0y05xjt0002ckkuqzxz9ade" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/03/13/node/" data-id="cj3lqwerl0003wkku0apgwovr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -432,7 +562,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/13/hello-world/" data-id="cj0y05xjd0000ckku2o3mzn1t" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/03/13/hello-world/" data-id="cj3lqweqa0002wkku4iyyt60c" class="article-share-link">Share</a>
       
       
     </footer>
@@ -459,7 +589,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li></ul>
     </div>
   </div>
 
@@ -472,7 +602,11 @@
       <ul>
         
           <li>
-            <a href="/2017/03/31/module/">模块化开发</a>
+            <a href="/2017/06/06/module/">模块化开发</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/06/webpacrk入门总结/">webpacrk入门总结</a>
           </li>
         
           <li>
