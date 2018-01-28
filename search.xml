@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F2018%2F01%2F28%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
-  </entry>
-  <entry>
     <title><![CDATA[模块化开发]]></title>
     <url>%2F2018%2F01%2F28%2Fmodule%2F</url>
     <content type="text"><![CDATA[概述什么是模块化开发 将软件产品看作为一系列功能模块的组合 通过特定的方式实现软件所需模块的划分、管理、加载 为什么使用模块化开发 https://github.com/seajs/seajs/issues/547 协同 代码复用 解决问题 大量的文件引入 命名冲突 文件依赖 存在 顺序 实现模块化的推演step-01 全局函数step-02 封装对象step-03 划分私有空间step-04 模块的扩展与维护step-05 第三方依赖管理在什么场景下使用模块化开发 业务复杂 重用逻辑非常多 扩展性要求较高 实现规范CommonJS规范AMD规范 Asynchronous Module Definition 规范 CMD规范 Common Module Definition 规范 实现Seajs使用步骤 在页面中引入sea.js文件 定义一个主模块文件，比如：main.js 在主模块文件中通过define的方式定义一个模块，并导出公共成员 在页面的行内脚本中通过seajs.use(‘path’,fn)的方式使用模块 回调函数的参数传过来的就是模块中导出的成员对象 定义一个模块 define 12345define(function(require, exports, module) &#123; exports.add = function(a, b) &#123; return a + b; &#125;;&#125;); 使用一个模块 seajs.use 一般用于入口模块 一般只会使用一次 require 模块与模块之间 导出成员的方式 module.exports exports.xxx return 三种方式的优先级 异步加载模块 默认require的效果是同步的，会阻塞代码的执行，造成界面卡顿 require.async(); 123require.async('path',function(module) &#123;&#125;); 使用第三方依赖（jQuery） 由于CMD是国产货，jquery默认不支持 改造 12345678// 适配CMDif (typeof define === "function" &amp;&amp; !define.amd) &#123; // 当前有define函数，并且不是AMD的情况 // jquery在新版本中如果使用AMD或CMD方式，不会去往全局挂载jquery对象 define(function() &#123; return jQuery.noConflict(true); &#125;);&#125; Seajs配置 配置 seajs.config base alias]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2018%2F01%2F28%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
   </entry>
   <entry>
     <title><![CDATA[构建自动化工作流]]></title>
