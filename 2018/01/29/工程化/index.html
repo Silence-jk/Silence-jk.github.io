@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="webpack," />
 
 
 
@@ -94,76 +94,28 @@
 
 
 
-<meta name="description" content="兩個問題学习目标
-了解什么是Node，什么是NPM；（Node.js）
-掌握Bower的使用；
-熟练使用Less/Sass；
-搭建一个自己的自动化工作流环境；
-自动编译
-自动合并
-自动刷新
-自动部署
-
-
-GIT 与 GITHUB
-master 托管源文件
-gh-pages 托管部署文件
-在github搭建自己的blog
-
-
-
-为什么要有自动化的流程
-在我们的开发过程中有大量的重复操作
-DRY  D">
+<meta name="description" content="工程化（What &amp;amp; Why）为了方便代码维护，我们要将相同功能的函数、对象等放入一个文件（模块），这样就会形成很多文件；但为了提高浏览器的渲染速度，我们又要尽量减少网络中请求的文件数；
+既要考虑性能，又要考虑模块化，相互矛盾，怎么搞？
+解决办法：开发时一套代码，发布到线上时一套合并压缩的代码。
+如果手动处理，费时费力，于是就提出工程化。
+工程化的实现grunt最早出现，每次操作都是文件读">
 <meta property="og:type" content="article">
-<meta property="og:title" content="构建自动化工作流">
-<meta property="og:url" content="https://silence-jk.github.io/2018/01/28/node/index.html">
+<meta property="og:title" content="工程化">
+<meta property="og:url" content="https://silence-jk.github.io/2018/01/29/工程化/index.html">
 <meta property="og:site_name" content="Silence_JK's Blog">
-<meta property="og:description" content="兩個問題学习目标
-了解什么是Node，什么是NPM；（Node.js）
-掌握Bower的使用；
-熟练使用Less/Sass；
-搭建一个自己的自动化工作流环境；
-自动编译
-自动合并
-自动刷新
-自动部署
-
-
-GIT 与 GITHUB
-master 托管源文件
-gh-pages 托管部署文件
-在github搭建自己的blog
-
-
-
-为什么要有自动化的流程
-在我们的开发过程中有大量的重复操作
-DRY  D">
-<meta property="og:updated_time" content="2017-03-13T09:33:10.246Z">
+<meta property="og:description" content="工程化（What &amp;amp; Why）为了方便代码维护，我们要将相同功能的函数、对象等放入一个文件（模块），这样就会形成很多文件；但为了提高浏览器的渲染速度，我们又要尽量减少网络中请求的文件数；
+既要考虑性能，又要考虑模块化，相互矛盾，怎么搞？
+解决办法：开发时一套代码，发布到线上时一套合并压缩的代码。
+如果手动处理，费时费力，于是就提出工程化。
+工程化的实现grunt最早出现，每次操作都是文件读">
+<meta property="og:updated_time" content="2018-01-29T10:59:57.513Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="构建自动化工作流">
-<meta name="twitter:description" content="兩個問題学习目标
-了解什么是Node，什么是NPM；（Node.js）
-掌握Bower的使用；
-熟练使用Less/Sass；
-搭建一个自己的自动化工作流环境；
-自动编译
-自动合并
-自动刷新
-自动部署
-
-
-GIT 与 GITHUB
-master 托管源文件
-gh-pages 托管部署文件
-在github搭建自己的blog
-
-
-
-为什么要有自动化的流程
-在我们的开发过程中有大量的重复操作
-DRY  D">
+<meta name="twitter:title" content="工程化">
+<meta name="twitter:description" content="工程化（What &amp;amp; Why）为了方便代码维护，我们要将相同功能的函数、对象等放入一个文件（模块），这样就会形成很多文件；但为了提高浏览器的渲染速度，我们又要尽量减少网络中请求的文件数；
+既要考虑性能，又要考虑模块化，相互矛盾，怎么搞？
+解决办法：开发时一套代码，发布到线上时一套合并压缩的代码。
+如果手动处理，费时费力，于是就提出工程化。
+工程化的实现grunt最早出现，每次操作都是文件读">
 
 
 
@@ -192,13 +144,13 @@ DRY  D">
 
 
 
-  <link rel="canonical" href="https://silence-jk.github.io/2018/01/28/node/"/>
+  <link rel="canonical" href="https://silence-jk.github.io/2018/01/29/工程化/"/>
 
 
 
 
 
-  <title>构建自动化工作流 | Silence_JK's Blog</title>
+  <title>工程化 | Silence_JK's Blog</title>
   
 
 
@@ -375,7 +327,7 @@ DRY  D">
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://silence-jk.github.io/2018/01/28/node/">
+    <link itemprop="mainEntityOfPage" href="https://silence-jk.github.io/2018/01/29/工程化/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Silence_JK">
@@ -392,7 +344,7 @@ DRY  D">
 
         
         
-          <h1 class="post-title" itemprop="name headline">构建自动化工作流</h1>
+          <h1 class="post-title" itemprop="name headline">工程化</h1>
         
 
         <div class="post-meta">
@@ -404,8 +356,8 @@ DRY  D">
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-28T17:31:39+08:00">
-                2018-01-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-29T17:06:27+08:00">
+                2018-01-29
               </time>
             
 
@@ -420,12 +372,34 @@ DRY  D">
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-03-13T17:33:10+08:00">
-                2017-03-13
+              <time title="更新于" itemprop="dateModified" datetime="2018-01-29T18:59:57+08:00">
+                2018-01-29
               </time>
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/性能与工程化/" itemprop="url" rel="index">
+                    <span itemprop="name">性能与工程化</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -435,9 +409,9 @@ DRY  D">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/01/28/node/#comments" itemprop="discussionUrl">
+                <a href="/2018/01/29/工程化/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/01/28/node/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/01/29/工程化/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -445,7 +419,7 @@ DRY  D">
 
           
           
-             <span id="/2018/01/28/node/" class="leancloud_visitors" data-flag-title="构建自动化工作流">
+             <span id="/2018/01/29/工程化/" class="leancloud_visitors" data-flag-title="工程化">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -470,7 +444,7 @@ DRY  D">
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,307字
+                  684字
                 </span>
               
 
@@ -486,7 +460,7 @@ DRY  D">
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  5分钟
+                  3分钟
                 </span>
               
             </div>
@@ -507,187 +481,42 @@ DRY  D">
       
 
       
-        <h2 id="兩個問題"><a href="#兩個問題" class="headerlink" title="兩個問題"></a>兩個問題</h2><h2 id="学习目标"><a href="#学习目标" class="headerlink" title="学习目标"></a>学习目标</h2><ul>
-<li>了解什么是Node，什么是NPM；（Node.js）</li>
-<li>掌握Bower的使用；</li>
-<li>熟练使用Less/Sass；</li>
-<li>搭建一个自己的自动化工作流环境；<ul>
-<li>自动编译</li>
-<li>自动合并</li>
-<li>自动刷新</li>
-<li>自动部署</li>
-</ul>
-</li>
-<li>GIT 与 GITHUB<ul>
-<li>master 托管源文件</li>
-<li>gh-pages 托管部署文件</li>
-<li>在github搭建自己的blog</li>
-</ul>
-</li>
-</ul>
-<h2 id="为什么要有自动化的流程"><a href="#为什么要有自动化的流程" class="headerlink" title="为什么要有自动化的流程"></a>为什么要有自动化的流程</h2><ul>
-<li>在我们的开发过程中有大量的重复操作</li>
-<li>DRY  Don’t repeat yourself</li>
-<li><p>开发人员的精力应放在哪？创造，新的一切</p>
-</li>
-<li><p>前端开发的编译操作</p>
-</li>
-</ul>
-<h2 id="1-Node环境"><a href="#1-Node环境" class="headerlink" title="1.Node环境"></a>1.Node环境</h2><h3 id="1-1-什么是Node"><a href="#1-1-什么是Node" class="headerlink" title="1.1.什么是Node"></a>1.1.什么是Node</h3><ul>
-<li>Node.js 可能类似jquery.js</li>
-<li>不是JS文件，也不是一个JS框架（）</li>
-<li>而是Server side Javascript runtime, 服务端的一个JS运行时</li>
-<li>我们可以在NODE运行JS代码</li>
-<li>alert();ECMAScript  JS- ES  BOM  DOM</li>
-<li>node中只能运行ECMAScript，无法使用 BOM 和 DOM</li>
-<li>目前我们的JS是运行在浏览器内核中</li>
-<li>PHP是什么？是一门脚本语言也是一个运行环境</li>
-<li><p>为什么Node选中了JS，</p>
-</li>
-<li><p>说到底就是一个JS运行环境</p>
-</li>
-<li><p>目前有两个分支</p>
+        <h2 id="工程化（What-amp-Why）"><a href="#工程化（What-amp-Why）" class="headerlink" title="工程化（What &amp; Why）"></a>工程化（What &amp; Why）</h2><p>为了方便代码维护，我们要将相同功能的函数、对象等放入一个文件（模块），这样就会形成很多文件；<br>但为了提高浏览器的渲染速度，我们又要尽量减少网络中请求的文件数；</p>
+<p>既要考虑性能，又要考虑模块化，相互矛盾，怎么搞？</p>
+<p>解决办法：<br>开发时一套代码，发布到线上时一套合并压缩的代码。</p>
+<p>如果手动处理，费时费力，于是就提出工程化。</p>
+<h2 id="工程化的实现"><a href="#工程化的实现" class="headerlink" title="工程化的实现"></a>工程化的实现</h2><h3 id="grunt"><a href="#grunt" class="headerlink" title="grunt"></a>grunt</h3><p>最早出现，每次操作都是文件读写，慢！配置相对繁琐。</p>
+<h3 id="gulp"><a href="#gulp" class="headerlink" title="gulp"></a>gulp</h3><p>基于grunt缺点做得改进，基于文件流读写，快！配置也相对简单。</p>
+<h3 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h3><p>早期只是一个打包工具，作为gulp的插件来使用；现在发展的相对全面，有以下特点：</p>
 <ul>
-<li>Node.js 0.12.7 官方版本 要求尽善尽美</li>
-<li>IO.js 是社区的产物，不是官方的东西，io.js有很多新特性，迭代非常快，社区推进非常快</li>
-<li>15年两者合并，发布node第一个正式版 4.0， 迭代速度又慢了</li>
-<li>node 5.x == io.js</li>
-<li>node 4.0 == node</li>
+<li>任何文件都可以当模块</li>
+<li>打包体积更小</li>
+<li>打包更快</li>
+<li>默认支持 AMD，Commonjs，ES6 modules</li>
 </ul>
-</li>
-</ul>
-<h3 id="1-2-Node环境搭建"><a href="#1-2-Node环境搭建" class="headerlink" title="1.2.Node环境搭建"></a>1.2.Node环境搭建</h3><h4 id="1-2-1-Mac"><a href="#1-2-1-Mac" class="headerlink" title="1.2.1.Mac"></a>1.2.1.Mac</h4><ul>
-<li>安装包的方式<ul>
-<li><a href="https://nodejs.org/dist/v5.5.0/node-v5.5.0.pkg" target="_blank" rel="external">pkg</a></li>
-</ul>
-</li>
-<li><p>NVM（Node Version Manager）</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.30.2/install.sh | bash</div><div class="line">$ <span class="built_in">echo</span> <span class="string">'. ~/.nvm/nvm.sh'</span> &gt;&gt; .bash_profile</div><div class="line">$ nvm install stable</div><div class="line">$ nvm <span class="built_in">alias</span> default stable</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="1-2-2-Windows"><a href="#1-2-2-Windows" class="headerlink" title="1.2.2.Windows"></a>1.2.2.Windows</h4><ul>
-<li>安装包的方式<ul>
-<li><a href="https://nodejs.org/dist/v5.5.0/node-v5.5.0-x64.msi" target="_blank" rel="external">msi_x64</a></li>
-<li><a href="https://nodejs.org/dist/v5.5.0/node-v5.5.0-x86.msi" target="_blank" rel="external">msi_x86</a></li>
-</ul>
-</li>
-<li>NVM（Node Version Manager）</li>
-<li>nvm(node version manager)</li>
-<li>因为NODE版本比较多，开发人员可能依赖很多版本</li>
-<li><p>通过NVM，可以轻松切换于不同的版本之间</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"> </div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>NVM_HOME=C:\Develop\nvm</p>
-<p>NVM_SYMLINK=C:\Develop\nodejs</p>
-<p>NPM_HOME=C:\Develop\nvm\npm</p>
-<p>PATH=%NVM_HOME%;%NVM_SYMLINK%;%NPM_HOME%</p>
-<h4 id="1-2-3-环境变量"><a href="#1-2-3-环境变量" class="headerlink" title="1.2.3.环境变量"></a>1.2.3.环境变量</h4><ul>
-<li><p>环境变量就是操作系统提供的系统级别用于存储变量的地方</p>
-</li>
-<li><p>系统变量和用户变量</p>
-</li>
-<li>系统变量指的是所用当前系统用户共享的变量</li>
-<li>自己的电脑一般只有一个用户</li>
-<li><p>建议将自己配置的环境变量放在用户变量中，用户变量比较干净</p>
-</li>
-<li><p>环境变量的变量名是不区分大小写的</p>
-</li>
-<li><p>变量间运行相互引用</p>
-</li>
-<li><p>特殊值：</p>
-</li>
-<li>PATH变量（不区分大小写）</li>
-<li>PATH 相当于一个路径的引用</li>
-<li><p>只要添加到PATH变量中的路径，都可以在任何目录下搜索</p>
-</li>
-<li><p>命令行</p>
-</li>
-<li>可以用来执行当前目录下的文件</li>
-<li>命令</li>
-</ul>
-<p>cd :change directory</p>
+<h2 id="webpack使用"><a href="#webpack使用" class="headerlink" title="webpack使用"></a>webpack使用</h2><h3 id="添加配置文件-webpack-config-js"><a href="#添加配置文件-webpack-config-js" class="headerlink" title="添加配置文件 webpack.config.js"></a>添加配置文件 webpack.config.js</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">var path = require(&apos;path&apos;);</div><div class="line"></div><div class="line">module.exports = &#123;</div><div class="line">  entry: &apos;./src/js/index.js&apos;, //入口文件</div><div class="line">  output: &#123;</div><div class="line">    filename: &apos;bundle.js&apos;,</div><div class="line">    path: path.resolve(__dirname, &apos;./dist&apos;) //文件处理后的输出目录</div><div class="line">  &#125;,</div><div class="line">  module: &#123;</div><div class="line">   </div><div class="line">  &#125;,</div><div class="line">  plugins: [</div><div class="line"></div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="module-模块"><a href="#module-模块" class="headerlink" title="module 模块"></a>module 模块</h3><p>主要是针对特定类型的单文件进行处理</p>
 <ul>
-<li>Node.js是一个轻内核（本身没有什么功能）的东东，所有的功能都要功能包提供</li>
-<li>node官方提供了一些最基础的包</li>
+<li>css-loader .css -&gt; 可以加载的模块</li>
+<li>babel-loader .es6 -&gt; .js</li>
+<li>scss-loader .scss -&gt; .css</li>
 </ul>
-<h3 id="1-3-Node用途"><a href="#1-3-Node用途" class="headerlink" title="1.3.Node用途"></a>1.3.Node用途</h3><h4 id="REPL环境（控制台环境）"><a href="#REPL环境（控制台环境）" class="headerlink" title="REPL环境（控制台环境）"></a>REPL环境（控制台环境）</h4><h4 id="1-3-1-开发Web应用程序"><a href="#1-3-1-开发Web应用程序" class="headerlink" title="1.3.1.开发Web应用程序"></a>1.3.1.开发Web应用程序</h4><ul>
-<li>做动态网站</li>
-<li>开发提供数据的服务端API</li>
-</ul>
-<h4 id="1-3-2-前端开发工具基础"><a href="#1-3-2-前端开发工具基础" class="headerlink" title="1.3.2.前端开发工具基础"></a>1.3.2.前端开发工具基础</h4><ul>
-<li>Node.js给前端乃至整个开发行业带来一场工业革命</li>
-<li>刀跟火种</li>
-</ul>
-<h3 id="1-4-Node开发Web应用Demo"><a href="#1-4-Node开发Web应用Demo" class="headerlink" title="1.4.Node开发Web应用Demo"></a>1.4.Node开发Web应用Demo</h3><h4 id="1-4-1-复习请求与响应"><a href="#1-4-1-复习请求与响应" class="headerlink" title="1.4.1.复习请求与响应"></a>1.4.1.复习请求与响应</h4><p>客户端发送到服务端的东西称之为请求报文<br>服务端返回给客户端的东西称之为响应报文</p>
-<h3 id="1-5-NPM"><a href="#1-5-NPM" class="headerlink" title="1.5.NPM"></a>1.5.NPM</h3><h4 id="1-5-1-什么是NPM"><a href="#1-5-1-什么是NPM" class="headerlink" title="1.5.1.什么是NPM"></a>1.5.1.什么是NPM</h4><p><a href="https://www.npmjs.com/" target="_blank" rel="external">https://www.npmjs.com/</a></p>
+<p>在上面代码基础上增加打包css文件功能</p>
 <ul>
-<li>Node Package Manager</li>
-<li>Node应用程序依赖包的管理工具</li>
-<li>安装卸载更新之类的操作</li>
+<li>npm 安装 style-loader 和 css-loader 模块</li>
+<li>增加打包 css 的配置</li>
 </ul>
-<h4 id="1-5-2-为什么使用NPM"><a href="#1-5-2-为什么使用NPM" class="headerlink" title="1.5.2.为什么使用NPM"></a>1.5.2.为什么使用NPM</h4><ul>
-<li>包很多</li>
-<li>场景：我需要用一个A，A依赖B，B依赖C</li>
-<li>常见的包管理工具都有循环依赖的功能</li>
-<li>你只需记住你要什么东西</li>
-</ul>
-<h4 id="1-5-3-常见的NPM操作"><a href="#1-5-3-常见的NPM操作" class="headerlink" title="1.5.3.常见的NPM操作"></a>1.5.3.常见的NPM操作</h4><p>// 安装一个包，默认安装最新稳定版本<br>npm install package_name<br>// –save<br>// 初始化操作，给项目添加一个配置文件<br>npm init<br>// –yes参数走默认配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div></pre></td><td class="code"><pre><div class="line">var path = require(&apos;path&apos;);</div><div class="line"></div><div class="line">module.exports = &#123;</div><div class="line">  entry: &apos;./src/js/index.js&apos;, //入口文件</div><div class="line">  output: &#123;</div><div class="line">    filename: &apos;bundle.js&apos;,</div><div class="line">    path: path.resolve(__dirname, &apos;./dist&apos;) //文件处理后的输出目录</div><div class="line">  &#125;,</div><div class="line">  module: &#123;</div><div class="line">    rules: [</div><div class="line">      &#123;</div><div class="line">        test: /\.css$/,</div><div class="line">         use: [&apos;style-loader&apos;, &apos;css-loader&apos;]  </div><div class="line">      &#125;</div><div class="line">    ]   </div><div class="line">  &#125;,</div><div class="line">  plugins: [</div><div class="line"></div><div class="line">  ]</div><div class="line">&#125;</div><div class="line">``` </div><div class="line"></div><div class="line">### plugins 模块</div><div class="line">来完成 loader 模块无法完成的事,比如：</div><div class="line">- 压缩js</div><div class="line">- 压缩图片</div><div class="line">- 单独分离出css文件</div><div class="line">- ...</div><div class="line"></div><div class="line">在上面代码基础上实现压缩js功能</div><div class="line">- npm 安装 uglifyjs-webpack-plugin</div><div class="line">- 增加插件配置</div><div class="line"></div><div class="line">```(javascript)</div><div class="line">var path = require(&apos;path&apos;);</div><div class="line">//插件一般都是返回一个类，用时用 new</div><div class="line">var UglifyJsPlugin = require(&apos;uglifyjs-webpack-plugin&apos;);</div><div class="line"></div><div class="line">module.exports = &#123;</div><div class="line">  entry: &apos;./src/js/index.js&apos;,</div><div class="line">  output: &#123;</div><div class="line">    filename: &apos;bundle.js&apos;,</div><div class="line">    path: path.resolve(__dirname, &apos;./dist&apos;)</div><div class="line">  &#125;,</div><div class="line">  module: &#123;</div><div class="line">    rules: [</div><div class="line">      &#123;</div><div class="line">        test: /\.css$/,</div><div class="line">         use: [&apos;style-loader&apos;, &apos;css-loader&apos;]  </div><div class="line">      &#125;,</div><div class="line">    ]</div><div class="line">  &#125;,</div><div class="line">  plugins: [</div><div class="line">    new UglifyJsPlugin()</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="自动刷新"><a href="#自动刷新" class="headerlink" title="自动刷新"></a>自动刷新</h3><p>本地开发流程<br>保存代码 -&gt; webpack构建 -&gt; 刷新浏览器<br>webpack-dev-server 可以自动完成这个过程<br>与服务端 node 的 node-supervisior 类似</p>
+<p>操作步骤：</p>
 <ul>
-<li>如果官方数据源太慢使用</li>
-<li><a href="https://npm.taobao.org/" target="_blank" rel="external">https://npm.taobao.org/</a></li>
+<li>先用 npm 安装 html-wepack-plugin 插件，将 index.html 也加入构建</li>
+<li>将 index.html 从根目录移至 src，并删除其中 script 及 link 标签</li>
+<li>在 webpack.config.js 中配置该插件 </li>
+<li>此时所有html,css,js源代码都在 src 目录下，打包后的文件都在 dist 目录下</li>
+<li>全局安装 webpack-dev-server</li>
+<li>运行 webpack-dev-server –open，修改 src 下文件，看是否自动刷新 </li>
 </ul>
-<hr>
-<h2 id="2-Bower"><a href="#2-Bower" class="headerlink" title="2.Bower"></a>2.Bower</h2><h3 id="2-1-什么是Bower"><a href="#2-1-什么是Bower" class="headerlink" title="2.1.什么是Bower"></a>2.1.什么是Bower</h3><ul>
-<li><a href="http://bower.io/" target="_blank" rel="external">官网</a></li>
-<li>web应用程序依赖项管理工具</li>
-</ul>
-<h3 id="2-2-为什么使用Bower"><a href="#2-2-为什么使用Bower" class="headerlink" title="2.2.为什么使用Bower"></a>2.2.为什么使用Bower</h3><ul>
-<li>方便便捷的方式管理包，zhuangbi</li>
-</ul>
-<h3 id="2-3-Bower实践"><a href="#2-3-Bower实践" class="headerlink" title="2.3.Bower实践"></a>2.3.Bower实践</h3><ul>
-<li><p>npm install -g bower // -g:global</p>
-</li>
-<li><p>修改npm全局路径，就是在用户目录下添加.npmrc文件</p>
-</li>
-</ul>
-<hr>
-<h2 id="3-Sass-LESS"><a href="#3-Sass-LESS" class="headerlink" title="3.Sass/LESS"></a>3.Sass/LESS</h2><hr>
-<h2 id="4-Gulp"><a href="#4-Gulp" class="headerlink" title="4.Gulp"></a>4.Gulp</h2><h3 id="4-1-Gulp简介"><a href="#4-1-Gulp简介" class="headerlink" title="4.1.Gulp简介"></a>4.1.Gulp简介</h3><ul>
-<li>链接：<ul>
-<li><a href="http://gulpjs.com/" target="_blank" rel="external">官网</a></li>
-<li><a href="http://www.gulpjs.com.cn/" target="_blank" rel="external">中文网</a></li>
-</ul>
-</li>
-<li>就是用来机械化的完成重复性质的工作</li>
-<li>gulp的机制就是将重复工作抽象成一个个的任务，</li>
-</ul>
-<h3 id="4-2-Gulp准备工作"><a href="#4-2-Gulp准备工作" class="headerlink" title="4.2.Gulp准备工作"></a>4.2.Gulp准备工作</h3><ul>
-<li>安装Node.js</li>
-<li>安装 gulp 命令行工具<ul>
-<li><code>npm install -g gulp</code></li>
-</ul>
-</li>
-<li>初始化 gulp 项目</li>
-<li>创建任务 - gulpfile.js</li>
-</ul>
-<h3 id="4-3-基本使用"><a href="#4-3-基本使用" class="headerlink" title="4.3.基本使用"></a>4.3.基本使用</h3><h3 id="4-4-常用插件"><a href="#4-4-常用插件" class="headerlink" title="4.4.常用插件"></a>4.4.常用插件</h3><ul>
-<li><a href="https://www.npmjs.com/package/gulp-less" target="_blank" rel="external">编译 Less：gulp-less</a></li>
-<li><a href="https://www.npmjs.com/package/gulp-connect" target="_blank" rel="external">创建本地服务器：gulp-connect</a></li>
-<li><a href="https://www.npmjs.com/package/gulp-concat" target="_blank" rel="external">合并文件：gulp-concat</a></li>
-<li><a href="https://www.npmjs.com/package/gulp-uglify" target="_blank" rel="external">最小化 js 文件：gulp-uglify</a></li>
-<li><a href="https://www.npmjs.com/package/gulp-rename" target="_blank" rel="external">重命名文件：gulp-rename</a></li>
-<li><a href="https://www.npmjs.com/package/gulp-minify-css" target="_blank" rel="external">最小化 css 文件：gulp-minify-css</a></li>
-<li><a href="https://www.npmjs.com/package/gulp-minify-html" target="_blank" rel="external">压缩html文件 gulp-minify-html</a></li>
-<li><a href="https://www.npmjs.com/package/gulp-imagemin" target="_blank" rel="external">最小化图像：gulp-imagemin</a></li>
-</ul>
-<hr>
-<h2 id="5-Git"><a href="#5-Git" class="headerlink" title="5.Git"></a>5.Git</h2><h3 id="5-1-什么是GIT，什么是GITHUB"><a href="#5-1-什么是GIT，什么是GITHUB" class="headerlink" title="5.1.什么是GIT，什么是GITHUB"></a>5.1.什么是GIT，什么是GITHUB</h3><ul>
-<li>GIT</li>
-<li>GITHUB</li>
-</ul>
-<h3 id="5-2-环境安装"><a href="#5-2-环境安装" class="headerlink" title="5.2.环境安装"></a>5.2.环境安装</h3><h3 id="5-3-GIT常用命令"><a href="#5-3-GIT常用命令" class="headerlink" title="5.3.GIT常用命令"></a>5.3.GIT常用命令</h3><hr>
-<h2 id="6-Markdown"><a href="#6-Markdown" class="headerlink" title="6.Markdown"></a>6.Markdown</h2><p><a href="https://guides.github.com/features/mastering-markdown/" target="_blank" rel="external">https://guides.github.com/features/mastering-markdown/</a><br><a href="https://help.github.com/articles/github-flavored-markdown/" target="_blank" rel="external">https://help.github.com/articles/github-flavored-markdown/</a><br><a href="https://help.github.com/articles/markdown-basics/" target="_blank" rel="external">https://help.github.com/articles/markdown-basics/</a></p>
 
       
     </div>
@@ -703,6 +532,12 @@ DRY  D">
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/webpack/" rel="tag"># webpack</a>
+          
+        </div>
+      
 
       
       
@@ -712,7 +547,7 @@ DRY  D">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/13/module/" rel="next" title="模块化开发">
+              <a href="/2018/01/13/模块化/" rel="next" title="模块化开发">
                 <i class="fa fa-chevron-left"></i> 模块化开发
               </a>
             
@@ -832,7 +667,7 @@ DRY  D">
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -880,7 +715,7 @@ DRY  D">
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#兩個問題"><span class="nav-number">1.</span> <span class="nav-text">兩個問題</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#学习目标"><span class="nav-number">2.</span> <span class="nav-text">学习目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么要有自动化的流程"><span class="nav-number">3.</span> <span class="nav-text">为什么要有自动化的流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Node环境"><span class="nav-number">4.</span> <span class="nav-text">1.Node环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-什么是Node"><span class="nav-number">4.1.</span> <span class="nav-text">1.1.什么是Node</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-Node环境搭建"><span class="nav-number">4.2.</span> <span class="nav-text">1.2.Node环境搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-1-Mac"><span class="nav-number">4.2.1.</span> <span class="nav-text">1.2.1.Mac</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-2-Windows"><span class="nav-number">4.2.2.</span> <span class="nav-text">1.2.2.Windows</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-3-环境变量"><span class="nav-number">4.2.3.</span> <span class="nav-text">1.2.3.环境变量</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-Node用途"><span class="nav-number">4.3.</span> <span class="nav-text">1.3.Node用途</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#REPL环境（控制台环境）"><span class="nav-number">4.3.1.</span> <span class="nav-text">REPL环境（控制台环境）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-1-开发Web应用程序"><span class="nav-number">4.3.2.</span> <span class="nav-text">1.3.1.开发Web应用程序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-2-前端开发工具基础"><span class="nav-number">4.3.3.</span> <span class="nav-text">1.3.2.前端开发工具基础</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-Node开发Web应用Demo"><span class="nav-number">4.4.</span> <span class="nav-text">1.4.Node开发Web应用Demo</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-1-复习请求与响应"><span class="nav-number">4.4.1.</span> <span class="nav-text">1.4.1.复习请求与响应</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-NPM"><span class="nav-number">4.5.</span> <span class="nav-text">1.5.NPM</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-5-1-什么是NPM"><span class="nav-number">4.5.1.</span> <span class="nav-text">1.5.1.什么是NPM</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-5-2-为什么使用NPM"><span class="nav-number">4.5.2.</span> <span class="nav-text">1.5.2.为什么使用NPM</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-5-3-常见的NPM操作"><span class="nav-number">4.5.3.</span> <span class="nav-text">1.5.3.常见的NPM操作</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Bower"><span class="nav-number">5.</span> <span class="nav-text">2.Bower</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-什么是Bower"><span class="nav-number">5.1.</span> <span class="nav-text">2.1.什么是Bower</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-为什么使用Bower"><span class="nav-number">5.2.</span> <span class="nav-text">2.2.为什么使用Bower</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-Bower实践"><span class="nav-number">5.3.</span> <span class="nav-text">2.3.Bower实践</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Sass-LESS"><span class="nav-number">6.</span> <span class="nav-text">3.Sass/LESS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Gulp"><span class="nav-number">7.</span> <span class="nav-text">4.Gulp</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-Gulp简介"><span class="nav-number">7.1.</span> <span class="nav-text">4.1.Gulp简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-Gulp准备工作"><span class="nav-number">7.2.</span> <span class="nav-text">4.2.Gulp准备工作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-基本使用"><span class="nav-number">7.3.</span> <span class="nav-text">4.3.基本使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-常用插件"><span class="nav-number">7.4.</span> <span class="nav-text">4.4.常用插件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Git"><span class="nav-number">8.</span> <span class="nav-text">5.Git</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-什么是GIT，什么是GITHUB"><span class="nav-number">8.1.</span> <span class="nav-text">5.1.什么是GIT，什么是GITHUB</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-环境安装"><span class="nav-number">8.2.</span> <span class="nav-text">5.2.环境安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-GIT常用命令"><span class="nav-number">8.3.</span> <span class="nav-text">5.3.GIT常用命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-Markdown"><span class="nav-number">9.</span> <span class="nav-text">6.Markdown</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#工程化（What-amp-Why）"><span class="nav-number">1.</span> <span class="nav-text">工程化（What & Why）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工程化的实现"><span class="nav-number">2.</span> <span class="nav-text">工程化的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#grunt"><span class="nav-number">2.1.</span> <span class="nav-text">grunt</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gulp"><span class="nav-number">2.2.</span> <span class="nav-text">gulp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#webpack"><span class="nav-number">2.3.</span> <span class="nav-text">webpack</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#webpack使用"><span class="nav-number">3.</span> <span class="nav-text">webpack使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加配置文件-webpack-config-js"><span class="nav-number">3.1.</span> <span class="nav-text">添加配置文件 webpack.config.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#module-模块"><span class="nav-number">3.2.</span> <span class="nav-text">module 模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动刷新"><span class="nav-number">3.3.</span> <span class="nav-text">自动刷新</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1034,9 +869,9 @@ DRY  D">
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://silence-jk.github.io/2018/01/28/node/';
-          this.page.identifier = '2018/01/28/node/';
-          this.page.title = '构建自动化工作流';
+          this.page.url = 'https://silence-jk.github.io/2018/01/29/工程化/';
+          this.page.identifier = '2018/01/29/工程化/';
+          this.page.title = '工程化';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://Silence_JK.disqus.com/embed.js';
