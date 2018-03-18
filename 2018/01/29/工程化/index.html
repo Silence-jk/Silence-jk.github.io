@@ -108,7 +108,7 @@
 解决办法：开发时一套代码，发布到线上时一套合并压缩的代码。
 如果手动处理，费时费力，于是就提出工程化。
 工程化的实现grunt最早出现，每次操作都是文件读">
-<meta property="og:updated_time" content="2018-01-29T10:59:57.513Z">
+<meta property="og:updated_time" content="2018-03-18T10:06:49.477Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="工程化">
 <meta name="twitter:description" content="工程化（What &amp;amp; Why）为了方便代码维护，我们要将相同功能的函数、对象等放入一个文件（模块），这样就会形成很多文件；但为了提高浏览器的渲染速度，我们又要尽量减少网络中请求的文件数；
@@ -372,8 +372,8 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-01-29T18:59:57+08:00">
-                2018-01-29
+              <time title="更新于" itemprop="dateModified" datetime="2018-03-18T18:06:49+08:00">
+                2018-03-18
               </time>
             
           </span>
@@ -494,7 +494,7 @@
 <li>打包更快</li>
 <li>默认支持 AMD，Commonjs，ES6 modules</li>
 </ul>
-<h2 id="webpack使用"><a href="#webpack使用" class="headerlink" title="webpack使用"></a>webpack使用</h2><h3 id="添加配置文件-webpack-config-js"><a href="#添加配置文件-webpack-config-js" class="headerlink" title="添加配置文件 webpack.config.js"></a>添加配置文件 webpack.config.js</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">var path = require(&apos;path&apos;);</div><div class="line"></div><div class="line">module.exports = &#123;</div><div class="line">  entry: &apos;./src/js/index.js&apos;, //入口文件</div><div class="line">  output: &#123;</div><div class="line">    filename: &apos;bundle.js&apos;,</div><div class="line">    path: path.resolve(__dirname, &apos;./dist&apos;) //文件处理后的输出目录</div><div class="line">  &#125;,</div><div class="line">  module: &#123;</div><div class="line">   </div><div class="line">  &#125;,</div><div class="line">  plugins: [</div><div class="line"></div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="webpack使用"><a href="#webpack使用" class="headerlink" title="webpack使用"></a>webpack使用</h2><h3 id="添加配置文件-webpack-config-js"><a href="#添加配置文件-webpack-config-js" class="headerlink" title="添加配置文件 webpack.config.js"></a>添加配置文件 webpack.config.js</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  <span class="attr">entry</span>: <span class="string">'./src/js/index.js'</span>, <span class="comment">//入口文件</span></div><div class="line">  output: &#123;</div><div class="line">    <span class="attr">filename</span>: <span class="string">'bundle.js'</span>,</div><div class="line">    <span class="attr">path</span>: path.resolve(__dirname, <span class="string">'./dist'</span>) <span class="comment">//文件处理后的输出目录</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">module</span>: &#123;</div><div class="line">   </div><div class="line">  &#125;,</div><div class="line">  <span class="attr">plugins</span>: [</div><div class="line"></div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="module-模块"><a href="#module-模块" class="headerlink" title="module 模块"></a>module 模块</h3><p>主要是针对特定类型的单文件进行处理</p>
 <ul>
 <li>css-loader .css -&gt; 可以加载的模块</li>
@@ -504,9 +504,22 @@
 <p>在上面代码基础上增加打包css文件功能</p>
 <ul>
 <li>npm 安装 style-loader 和 css-loader 模块</li>
-<li>增加打包 css 的配置</li>
+<li>增加打包 css 的配置  </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div></pre></td><td class="code"><pre><div class="line">var path = require(&apos;path&apos;);</div><div class="line"></div><div class="line">module.exports = &#123;</div><div class="line">  entry: &apos;./src/js/index.js&apos;, //入口文件</div><div class="line">  output: &#123;</div><div class="line">    filename: &apos;bundle.js&apos;,</div><div class="line">    path: path.resolve(__dirname, &apos;./dist&apos;) //文件处理后的输出目录</div><div class="line">  &#125;,</div><div class="line">  module: &#123;</div><div class="line">    rules: [</div><div class="line">      &#123;</div><div class="line">        test: /\.css$/,</div><div class="line">         use: [&apos;style-loader&apos;, &apos;css-loader&apos;]  </div><div class="line">      &#125;</div><div class="line">    ]   </div><div class="line">  &#125;,</div><div class="line">  plugins: [</div><div class="line"></div><div class="line">  ]</div><div class="line">&#125;</div><div class="line">``` </div><div class="line"></div><div class="line">### plugins 模块</div><div class="line">来完成 loader 模块无法完成的事,比如：</div><div class="line">- 压缩js</div><div class="line">- 压缩图片</div><div class="line">- 单独分离出css文件</div><div class="line">- ...</div><div class="line"></div><div class="line">在上面代码基础上实现压缩js功能</div><div class="line">- npm 安装 uglifyjs-webpack-plugin</div><div class="line">- 增加插件配置</div><div class="line"></div><div class="line">```(javascript)</div><div class="line">var path = require(&apos;path&apos;);</div><div class="line">//插件一般都是返回一个类，用时用 new</div><div class="line">var UglifyJsPlugin = require(&apos;uglifyjs-webpack-plugin&apos;);</div><div class="line"></div><div class="line">module.exports = &#123;</div><div class="line">  entry: &apos;./src/js/index.js&apos;,</div><div class="line">  output: &#123;</div><div class="line">    filename: &apos;bundle.js&apos;,</div><div class="line">    path: path.resolve(__dirname, &apos;./dist&apos;)</div><div class="line">  &#125;,</div><div class="line">  module: &#123;</div><div class="line">    rules: [</div><div class="line">      &#123;</div><div class="line">        test: /\.css$/,</div><div class="line">         use: [&apos;style-loader&apos;, &apos;css-loader&apos;]  </div><div class="line">      &#125;,</div><div class="line">    ]</div><div class="line">  &#125;,</div><div class="line">  plugins: [</div><div class="line">    new UglifyJsPlugin()</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  <span class="attr">entry</span>: <span class="string">'./src/js/index.js'</span>, <span class="comment">//入口文件</span></div><div class="line">  output: &#123;</div><div class="line">    <span class="attr">filename</span>: <span class="string">'bundle.js'</span>,</div><div class="line">    <span class="attr">path</span>: path.resolve(__dirname, <span class="string">'./dist'</span>) <span class="comment">//文件处理后的输出目录</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">module</span>: &#123;</div><div class="line">    <span class="attr">rules</span>: [</div><div class="line">      &#123;</div><div class="line">        <span class="attr">test</span>: <span class="regexp">/\.css$/</span>,</div><div class="line">         <span class="attr">use</span>: [<span class="string">'style-loader'</span>, <span class="string">'css-loader'</span>]  </div><div class="line">      &#125;</div><div class="line">    ]   </div><div class="line">  &#125;,</div><div class="line">  <span class="attr">plugins</span>: [</div><div class="line"></div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="plugins-模块"><a href="#plugins-模块" class="headerlink" title="plugins 模块"></a>plugins 模块</h3><p>来完成 loader 模块无法完成的事,比如：</p>
+<ul>
+<li>压缩js</li>
+<li>压缩图片</li>
+<li>单独分离出css文件</li>
+<li>…</li>
+</ul>
+<p>在上面代码基础上实现压缩js功能</p>
+<ul>
+<li>npm 安装 uglifyjs-webpack-plugin</li>
+<li>增加插件配置  </li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</div><div class="line"><span class="comment">//插件一般都是返回一个类，用时用 new</span></div><div class="line"><span class="keyword">var</span> UglifyJsPlugin = <span class="built_in">require</span>(<span class="string">'uglifyjs-webpack-plugin'</span>);</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  <span class="attr">entry</span>: <span class="string">'./src/js/index.js'</span>,</div><div class="line">  <span class="attr">output</span>: &#123;</div><div class="line">    <span class="attr">filename</span>: <span class="string">'bundle.js'</span>,</div><div class="line">    <span class="attr">path</span>: path.resolve(__dirname, <span class="string">'./dist'</span>)</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">module</span>: &#123;</div><div class="line">    <span class="attr">rules</span>: [</div><div class="line">      &#123;</div><div class="line">        <span class="attr">test</span>: <span class="regexp">/\.css$/</span>,</div><div class="line">         <span class="attr">use</span>: [<span class="string">'style-loader'</span>, <span class="string">'css-loader'</span>]  </div><div class="line">      &#125;,</div><div class="line">    ]</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">plugins</span>: [</div><div class="line">    <span class="keyword">new</span> UglifyJsPlugin()</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="自动刷新"><a href="#自动刷新" class="headerlink" title="自动刷新"></a>自动刷新</h3><p>本地开发流程<br>保存代码 -&gt; webpack构建 -&gt; 刷新浏览器<br>webpack-dev-server 可以自动完成这个过程<br>与服务端 node 的 node-supervisior 类似</p>
 <p>操作步骤：</p>
 <ul>
@@ -556,6 +569,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/18/encodeURI与encodeURIComponent/" rel="prev" title="encodeURI与encodeURIComponent">
+                encodeURI与encodeURIComponent <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -645,7 +662,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -667,7 +684,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -715,7 +732,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#工程化（What-amp-Why）"><span class="nav-number">1.</span> <span class="nav-text">工程化（What & Why）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工程化的实现"><span class="nav-number">2.</span> <span class="nav-text">工程化的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#grunt"><span class="nav-number">2.1.</span> <span class="nav-text">grunt</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gulp"><span class="nav-number">2.2.</span> <span class="nav-text">gulp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#webpack"><span class="nav-number">2.3.</span> <span class="nav-text">webpack</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#webpack使用"><span class="nav-number">3.</span> <span class="nav-text">webpack使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加配置文件-webpack-config-js"><span class="nav-number">3.1.</span> <span class="nav-text">添加配置文件 webpack.config.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#module-模块"><span class="nav-number">3.2.</span> <span class="nav-text">module 模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动刷新"><span class="nav-number">3.3.</span> <span class="nav-text">自动刷新</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#工程化（What-amp-Why）"><span class="nav-number">1.</span> <span class="nav-text">工程化（What & Why）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工程化的实现"><span class="nav-number">2.</span> <span class="nav-text">工程化的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#grunt"><span class="nav-number">2.1.</span> <span class="nav-text">grunt</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gulp"><span class="nav-number">2.2.</span> <span class="nav-text">gulp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#webpack"><span class="nav-number">2.3.</span> <span class="nav-text">webpack</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#webpack使用"><span class="nav-number">3.</span> <span class="nav-text">webpack使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加配置文件-webpack-config-js"><span class="nav-number">3.1.</span> <span class="nav-text">添加配置文件 webpack.config.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#module-模块"><span class="nav-number">3.2.</span> <span class="nav-text">module 模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#plugins-模块"><span class="nav-number">3.3.</span> <span class="nav-text">plugins 模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动刷新"><span class="nav-number">3.4.</span> <span class="nav-text">自动刷新</span></a></li></ol></li></ol></div>
             
 
           </div>

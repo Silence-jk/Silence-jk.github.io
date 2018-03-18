@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="ES6," />
+  <meta name="keywords" content="编码," />
 
 
 
@@ -94,40 +94,25 @@
 
 
 
-<meta name="description" content="概述为什么使用模块化开发 业务发展 -&amp;gt; 代码量变大,难以维护 -&amp;gt; 拆分代码成多个文件 -&amp;gt; 将特定功能的代码放在一个文件（即模块）中； 
-要解决的问题
-避免命名冲突和变量污染
+<meta name="description" content="以前认为 encodeURIComponent 是 encodeURI 的增强版，故一直使用前者，今天突然发现 encodeURIComponet 处理 url 会使其变成普通的字符串，特地研究了一下 
 
-解决方案1、前缀命名空间: 能够有效解决，但却定义了大量的全局变量2、对象命名空间：3、IIFE：
-
-
-管理模块依赖当引入的多个模块间存在相互依赖关系时，自动分析依赖、处理依赖关系，不需要手动维护">
+从URL编码说起一般来说，URL 能使用的字符有英文字母（a-zA-Z）,数字（0~9），特殊字符（-_.~）和一些保留字符（;,/?:@&amp;amp;=+$#）
+如果使用了汉字，则要经过编码后才">
 <meta property="og:type" content="article">
-<meta property="og:title" content="模块化开发">
-<meta property="og:url" content="https://silence-jk.github.io/2018/01/13/模块化/index.html">
+<meta property="og:title" content="encodeURI与encodeURIComponent">
+<meta property="og:url" content="https://silence-jk.github.io/2018/03/18/encodeURI与encodeURIComponent/index.html">
 <meta property="og:site_name" content="Silence_JK's Blog">
-<meta property="og:description" content="概述为什么使用模块化开发 业务发展 -&amp;gt; 代码量变大,难以维护 -&amp;gt; 拆分代码成多个文件 -&amp;gt; 将特定功能的代码放在一个文件（即模块）中； 
-要解决的问题
-避免命名冲突和变量污染
+<meta property="og:description" content="以前认为 encodeURIComponent 是 encodeURI 的增强版，故一直使用前者，今天突然发现 encodeURIComponet 处理 url 会使其变成普通的字符串，特地研究了一下 
 
-解决方案1、前缀命名空间: 能够有效解决，但却定义了大量的全局变量2、对象命名空间：3、IIFE：
-
-
-管理模块依赖当引入的多个模块间存在相互依赖关系时，自动分析依赖、处理依赖关系，不需要手动维护">
-<meta property="og:image" content="http://r.photo.store.qq.com/psb?/V12czrrB0YvgMD/OSJlL43d.DZIXAZszaQiQs1xTrcgfIT12KVW38Vo4w4!/r/dGcBAAAAAAAA">
-<meta property="og:image" content="http://r.photo.store.qq.com/psb?/V12czrrB0YvgMD/U1eiuBPnArCb*xgo7K77o3Kc8l5X7HDxMJyGRJG1300!/r/dJQAAAAAAAAA">
-<meta property="og:updated_time" content="2018-01-29T09:03:11.863Z">
+从URL编码说起一般来说，URL 能使用的字符有英文字母（a-zA-Z）,数字（0~9），特殊字符（-_.~）和一些保留字符（;,/?:@&amp;amp;=+$#）
+如果使用了汉字，则要经过编码后才">
+<meta property="og:updated_time" content="2018-03-18T10:04:40.710Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="模块化开发">
-<meta name="twitter:description" content="概述为什么使用模块化开发 业务发展 -&amp;gt; 代码量变大,难以维护 -&amp;gt; 拆分代码成多个文件 -&amp;gt; 将特定功能的代码放在一个文件（即模块）中； 
-要解决的问题
-避免命名冲突和变量污染
+<meta name="twitter:title" content="encodeURI与encodeURIComponent">
+<meta name="twitter:description" content="以前认为 encodeURIComponent 是 encodeURI 的增强版，故一直使用前者，今天突然发现 encodeURIComponet 处理 url 会使其变成普通的字符串，特地研究了一下 
 
-解决方案1、前缀命名空间: 能够有效解决，但却定义了大量的全局变量2、对象命名空间：3、IIFE：
-
-
-管理模块依赖当引入的多个模块间存在相互依赖关系时，自动分析依赖、处理依赖关系，不需要手动维护">
-<meta name="twitter:image" content="http://r.photo.store.qq.com/psb?/V12czrrB0YvgMD/OSJlL43d.DZIXAZszaQiQs1xTrcgfIT12KVW38Vo4w4!/r/dGcBAAAAAAAA">
+从URL编码说起一般来说，URL 能使用的字符有英文字母（a-zA-Z）,数字（0~9），特殊字符（-_.~）和一些保留字符（;,/?:@&amp;amp;=+$#）
+如果使用了汉字，则要经过编码后才">
 
 
 
@@ -156,13 +141,13 @@
 
 
 
-  <link rel="canonical" href="https://silence-jk.github.io/2018/01/13/模块化/"/>
+  <link rel="canonical" href="https://silence-jk.github.io/2018/03/18/encodeURI与encodeURIComponent/"/>
 
 
 
 
 
-  <title>模块化开发 | Silence_JK's Blog</title>
+  <title>encodeURI与encodeURIComponent | Silence_JK's Blog</title>
   
 
 
@@ -339,7 +324,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://silence-jk.github.io/2018/01/13/模块化/">
+    <link itemprop="mainEntityOfPage" href="https://silence-jk.github.io/2018/03/18/encodeURI与encodeURIComponent/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Silence_JK">
@@ -356,7 +341,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">模块化开发</h1>
+          <h1 class="post-title" itemprop="name headline">encodeURI与encodeURIComponent</h1>
         
 
         <div class="post-meta">
@@ -368,8 +353,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-13T20:35:27+08:00">
-                2018-01-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-18T16:17:25+08:00">
+                2018-03-18
               </time>
             
 
@@ -384,34 +369,12 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-01-29T17:03:11+08:00">
-                2018-01-29
+              <time title="更新于" itemprop="dateModified" datetime="2018-03-18T18:04:40+08:00">
+                2018-03-18
               </time>
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/性能与工程化/" itemprop="url" rel="index">
-                    <span itemprop="name">性能与工程化</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -421,9 +384,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/01/13/模块化/#comments" itemprop="discussionUrl">
+                <a href="/2018/03/18/encodeURI与encodeURIComponent/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/01/13/模块化/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/03/18/encodeURI与encodeURIComponent/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -431,7 +394,7 @@
 
           
           
-             <span id="/2018/01/13/模块化/" class="leancloud_visitors" data-flag-title="模块化开发">
+             <span id="/2018/03/18/encodeURI与encodeURIComponent/" class="leancloud_visitors" data-flag-title="encodeURI与encodeURIComponent">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -456,7 +419,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  716字
+                  371字
                 </span>
               
 
@@ -472,7 +435,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  3分钟
+                  2分钟
                 </span>
               
             </div>
@@ -493,68 +456,29 @@
       
 
       
-        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><h3 id="为什么使用模块化开发"><a href="#为什么使用模块化开发" class="headerlink" title="为什么使用模块化开发"></a>为什么使用模块化开发</h3><p> 业务发展 -&gt; 代码量变大,难以维护 -&gt; 拆分代码成多个文件 -&gt; 将特定功能的代码放在一个文件（即模块）中； </p>
-<h3 id="要解决的问题"><a href="#要解决的问题" class="headerlink" title="要解决的问题"></a>要解决的问题</h3><ul>
-<li><p>避免命名冲突和变量污染</p>
+        <blockquote>
+<p>以前认为 encodeURIComponent 是 encodeURI 的增强版，故一直使用前者，今天突然发现 encodeURIComponet 处理 url 会使其变成普通的字符串，特地研究了一下 </p>
+</blockquote>
+<h2 id="从URL编码说起"><a href="#从URL编码说起" class="headerlink" title="从URL编码说起"></a>从URL编码说起</h2><p>一般来说，URL 能使用的字符有英文字母（<code>a-zA-Z</code>）,数字（<code>0~9</code>），特殊字符（<code>-_.~</code>）和一些保留字符（<code>;,/?:@&amp;=+$#</code>）</p>
+<p>如果使用了汉字，则要经过编码后才能访问；<br>常用的编码方式有以下几种：  </p>
 <ul>
-<li>解决方案<br>1、前缀命名空间: 能够有效解决，但却定义了大量的全局变量<br>2、对象命名空间：<br><img src="http://r.photo.store.qq.com/psb?/V12czrrB0YvgMD/OSJlL43d.DZIXAZszaQiQs1xTrcgfIT12KVW38Vo4w4!/r/dGcBAAAAAAAA" alt="obj"><br>3、IIFE：<br><img src="http://r.photo.store.qq.com/psb?/V12czrrB0YvgMD/U1eiuBPnArCb*xgo7K77o3Kc8l5X7HDxMJyGRJG1300!/r/dJQAAAAAAAAA" alt="IIFE"></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/encodeURI" target="_blank" rel="external">encodeURI</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent" target="_blank" rel="external">encodeURIComponent</a></li>
+<li>escape (废了)</li>
 </ul>
-</li>
-<li><p>管理模块依赖<br>当引入的多个模块间存在相互依赖关系时，自动分析依赖、处理依赖关系，不需要手动维护</p>
-</li>
-</ul>
-<h2 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h2><h3 id="CommonJS规范"><a href="#CommonJS规范" class="headerlink" title="CommonJS规范"></a>CommonJS规范</h3><ul>
-<li>文件即模块</li>
-<li>使用 module.exports / exports 暴露对外接口</li>
-<li>使用 require 同步加载模块依赖 </li>
-</ul>
-<p>适用范围：  </p>
+<h2 id="encodeURI"><a href="#encodeURI" class="headerlink" title="encodeURI"></a>encodeURI</h2><p><code>encodeURI</code>会将要编码的字符转为 <code>UTF-8</code> 的格式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">encodeURI</span>(<span class="string">'http://www.百度.com'</span>)</div><div class="line"><span class="comment">//"http://www.%E7%99%BE%E5%BA%A6.com" 此时转义没问题</span></div><div class="line"></div><div class="line"><span class="built_in">encodeURI</span>(<span class="string">'http://www.baidu.com?key1=?&amp;key2=&amp;'</span>)</div><div class="line"><span class="comment">//"http://www.%E7%99%BE%E5%BA%A6.com?key1=?&amp;key2=&amp;" 此时一些保留字符（?, &amp;）没有进行转义</span></div></pre></td></tr></table></figure>
+<p>这时就需要用<code>encodeURIComponent</code>了  </p>
+<h2 id="encodeURIComponent"><a href="#encodeURIComponent" class="headerlink" title="encodeURIComponent"></a>encodeURIComponent</h2><p>encodeURIComponent 是用来编码 URI 参数的。它会跳过非转义字符（字母数字以及-_.!~*’()）。但会转义 URL的 保留字符（;,/?:@&amp;=+$#）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">encodeURIComponent</span>(<span class="string">'http://www.百度.com?key1=?&amp;key2=&amp;'</span>)</div><div class="line"><span class="comment">// "http%3A%2F%2Fwww.%E7%99%BE%E5%BA%A6.com%3Fkey1%3D%3F%26key2%3D%26"  </span></div><div class="line">可以看到所有保留字符都被转义了，链接不能访问了，变成一个字符串</div></pre></td></tr></table></figure>
+<h2 id="好的处理-url-的编码方法"><a href="#好的处理-url-的编码方法" class="headerlink" title="好的处理 url 的编码方法"></a>好的处理 url 的编码方法</h2><p>综合上面两者的特性，我们可以把 url 的参数交给 encodeURIComponent ，把其他部分交给 encodeURI</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">encodeURI</span>(<span class="string">'http://www.百度.com?'</span> + <span class="built_in">encodeURIComponent</span>(key1) + <span class="string">'='</span> + <span class="built_in">encodeURIComponent</span>(?))</div><div class="line"><span class="comment">// "http://www.%E7%99%BE%E5%BA%A6.com?key1=%3F"</span></div></pre></td></tr></table></figure>
+<h2 id="URL-解码"><a href="#URL-解码" class="headerlink" title="URL 解码"></a>URL 解码</h2><p>有编码，就有对应的解码</p>
 <ul>
-<li>适合：node 服务端，文件存在本地硬盘 -&gt; 加载快，可以同步加载</li>
-<li>不适合：浏览器端，文件需要通过网络加载 -&gt; 耗时，同步加载阻塞页面（需要异步加载所需模块）-&gt; AMD规范</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/decodeURI" target="_blank" rel="external">decodeURI</a>  </li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/decodeURIComponent" target="_blank" rel="external">decodeURIComponent</a></li>
 </ul>
-<h3 id="AMD规范"><a href="#AMD规范" class="headerlink" title="AMD规范"></a>AMD规范</h3><ul>
-<li>Asynchronous Module Definition<ul>
-<li><a href="https://github.com/amdjs/amdjs-api/wiki/AMD" target="_blank" rel="external">规范</a></li>
-</ul>
-</li>
-</ul>
-<h3 id="CMD规范"><a href="#CMD规范" class="headerlink" title="CMD规范"></a>CMD规范</h3><ul>
-<li>Common Module Definition<ul>
-<li><a href="https://github.com/seajs/seajs/issues/242" target="_blank" rel="external">规范</a></li>
-</ul>
-</li>
-</ul>
-<h2 id="对比-AMD-与-CMD"><a href="#对比-AMD-与-CMD" class="headerlink" title="对比 AMD 与 CMD"></a>对比 AMD 与 CMD</h2><p>这两个现在都不常用，了解就好。</p>
-<h3 id="声明依赖模块时机不同"><a href="#声明依赖模块时机不同" class="headerlink" title="声明依赖模块时机不同"></a>声明依赖模块时机不同</h3><ul>
-<li>AMD 推崇依赖前置，在定义模块时就要声明其以来模块</li>
-<li>CMD 推崇依赖就近，需要用时再 require()  </li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">//CMD</div><div class="line">define(function(require, exports, module) &#123;</div><div class="line">  var a = require(&apos;./a&apos;);</div><div class="line">  a.doSomething();</div><div class="line">&#125;) </div><div class="line"></div><div class="line">//AMD</div><div class="line">define([&apos;./a&apos;, &apos;./b&apos;], function() &#123;</div><div class="line">  a.doSomething();</div><div class="line">  b.doSomething();</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<h3 id="AMD的使用-require-js"><a href="#AMD的使用-require-js" class="headerlink" title="AMD的使用(require.js)"></a>AMD的使用(require.js)</h3><ul>
-<li>define(‘模块标识’, ‘要依赖的模块’, ‘调用该模块要执行的函数’) 定义模块</li>
-<li>reuqire(‘模块名’, ‘回调函数’) 调用模块  </li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">//定义 moduleA</div><div class="line">define(&apos;moduleA&apos;, function(require, exports, module) &#123;</div><div class="line">  exports.getNum = function() &#123;</div><div class="line">    return 5;</div><div class="line">  &#125;;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">//定义moduleD</div><div class="line">define(&apos;moduleD&apos;, [&apos;moduleA&apos;], function(moduleA) &#123;</div><div class="line">  var index = moduleA.getNum();</div><div class="line">  return &#123;</div><div class="line">    addIndex: function() &#123;</div><div class="line">      index += 1;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line">//使用模块</div><div class="line">require(&apos;moduleD&apos;, function(moduleD) &#123;</div><div class="line"></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<h3 id="CMD的使用-sea-js"><a href="#CMD的使用-sea-js" class="headerlink" title="CMD的使用(sea.js)"></a>CMD的使用(sea.js)</h3><ul>
-<li>引入 SeaJS 的库  </li>
-<li>定义模块（define） </li>
-<li>暴露模块接口（exports） </li>
-<li>加载依赖模块（require）</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;script src=&quot;./sea.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;script&gt;</div><div class="line">  define(function (require,exports,module) &#123;</div><div class="line">      // exports : 对外的接口</div><div class="line">      // requires : 依赖的模块</div><div class="line">      require(&apos;./a.js&apos;);//如果地址是一个模块的话，那么require的返回值就是模块中的exports</div><div class="line">  &#125;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<h2 id="ES6-模块标准"><a href="#ES6-模块标准" class="headerlink" title="ES6 模块标准"></a>ES6 模块标准</h2><h3 id="设计思想"><a href="#设计思想" class="headerlink" title="设计思想"></a>设计思想</h3><p>一个JS文件就代表一个模块，你可以使用 import 和 export 来导入/导出模块中的东西</p>
-<h3 id="基本特点"><a href="#基本特点" class="headerlink" title="基本特点"></a>基本特点</h3><ul>
-<li>自动开启严格模式，即使你没有写 use strict</li>
-<li>每个模块都有自己的上下文，每一个模块内声明的变量都是局部变量，不会污染全局作用域</li>
-<li>模块中可以导入和导出各种类型的变量，如函数，对象，字符串，数字，布尔值，类等</li>
-<li>每一个模块只加载一次，每一个 JS 只执行一次， 如果下次再去加载同目录下同文件，直接从内存中读取。 一个模块就是一个单例，或者说就是一个对象</li>
-</ul>
-<h3 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h3><ul>
-<li><a href="https://segmentfault.com/a/1190000004100661" target="_blank" rel="external">ES6模块指南</a></li>
-<li><a href="http://es6.ruanyifeng.com/#docs/module" target="_blank" rel="external">ES6入门之Module语法</a></li>
-</ul>
-
+<h2 id="The-End"><a href="#The-End" class="headerlink" title="The End"></a>The End</h2>
       
     </div>
     
@@ -571,7 +495,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/ES6/" rel="tag"># ES6</a>
+            <a href="/tags/编码/" rel="tag"># 编码</a>
           
         </div>
       
@@ -584,8 +508,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/06/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2018/01/29/工程化/" rel="next" title="工程化">
+                <i class="fa fa-chevron-left"></i> 工程化
               </a>
             
           </div>
@@ -593,10 +517,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/01/29/工程化/" rel="prev" title="工程化">
-                工程化 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -756,7 +676,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么使用模块化开发"><span class="nav-number">1.1.</span> <span class="nav-text">为什么使用模块化开发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#要解决的问题"><span class="nav-number">1.2.</span> <span class="nav-text">要解决的问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#规范"><span class="nav-number">2.</span> <span class="nav-text">规范</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CommonJS规范"><span class="nav-number">2.1.</span> <span class="nav-text">CommonJS规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AMD规范"><span class="nav-number">2.2.</span> <span class="nav-text">AMD规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CMD规范"><span class="nav-number">2.3.</span> <span class="nav-text">CMD规范</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对比-AMD-与-CMD"><span class="nav-number">3.</span> <span class="nav-text">对比 AMD 与 CMD</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#声明依赖模块时机不同"><span class="nav-number">3.1.</span> <span class="nav-text">声明依赖模块时机不同</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AMD的使用-require-js"><span class="nav-number">3.2.</span> <span class="nav-text">AMD的使用(require.js)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CMD的使用-sea-js"><span class="nav-number">3.3.</span> <span class="nav-text">CMD的使用(sea.js)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ES6-模块标准"><span class="nav-number">4.</span> <span class="nav-text">ES6 模块标准</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#设计思想"><span class="nav-number">4.1.</span> <span class="nav-text">设计思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本特点"><span class="nav-number">4.2.</span> <span class="nav-text">基本特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更多"><span class="nav-number">4.3.</span> <span class="nav-text">更多</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#从URL编码说起"><span class="nav-number">1.</span> <span class="nav-text">从URL编码说起</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#encodeURI"><span class="nav-number">2.</span> <span class="nav-text">encodeURI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#encodeURIComponent"><span class="nav-number">3.</span> <span class="nav-text">encodeURIComponent</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#好的处理-url-的编码方法"><span class="nav-number">4.</span> <span class="nav-text">好的处理 url 的编码方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#URL-解码"><span class="nav-number">5.</span> <span class="nav-text">URL 解码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-End"><span class="nav-number">6.</span> <span class="nav-text">The End</span></a></li></ol></div>
             
 
           </div>
@@ -910,9 +830,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://silence-jk.github.io/2018/01/13/模块化/';
-          this.page.identifier = '2018/01/13/模块化/';
-          this.page.title = '模块化开发';
+          this.page.url = 'https://silence-jk.github.io/2018/03/18/encodeURI与encodeURIComponent/';
+          this.page.identifier = '2018/03/18/encodeURI与encodeURIComponent/';
+          this.page.title = 'encodeURI与encodeURIComponent';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://Silence_JK.disqus.com/embed.js';
