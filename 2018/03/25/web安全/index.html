@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="webpack," />
+  <meta name="keywords" content="XSS,CSRF," />
 
 
 
@@ -94,28 +94,21 @@
 
 
 
-<meta name="description" content="工程化（What &amp;amp; Why）为了方便代码维护，我们要将相同功能的函数、对象等放入一个文件（模块），这样就会形成很多文件；但为了提高浏览器的渲染速度，我们又要尽量减少网络中请求的文件数；
-既要考虑性能，又要考虑模块化，相互矛盾，怎么搞？
-解决办法：开发时一套代码，发布到线上时一套合并压缩的代码。
-如果手动处理，费时费力，于是就提出工程化。
-工程化的实现grunt最早出现，每次操作都是文件读">
+<meta name="description" content="web安全是如何提出的？随着互联网的发展，我们的个人财富、信息等都会存储在互联网上，这时就会有不少神秘人想要利用 web 网页的漏洞获取我们的财富或者利用我们的信息获得财富，内行的人给这些神秘人起了个代号，叫做 “黑客”为了保护我们的财富及信息，就提出了web安全这个概念
+web的攻击手段有哪些？目前比较出名的有XSS,CSRF,DDOS;本篇文章简单介绍一下这些手段的原理及如何防范（个人理解，可">
 <meta property="og:type" content="article">
-<meta property="og:title" content="工程化">
-<meta property="og:url" content="https://silence-jk.github.io/2018/01/29/工程化/index.html">
+<meta property="og:title" content="web安全">
+<meta property="og:url" content="https://silence-jk.github.io/2018/03/25/web安全/index.html">
 <meta property="og:site_name" content="Silence_JK's Blog">
-<meta property="og:description" content="工程化（What &amp;amp; Why）为了方便代码维护，我们要将相同功能的函数、对象等放入一个文件（模块），这样就会形成很多文件；但为了提高浏览器的渲染速度，我们又要尽量减少网络中请求的文件数；
-既要考虑性能，又要考虑模块化，相互矛盾，怎么搞？
-解决办法：开发时一套代码，发布到线上时一套合并压缩的代码。
-如果手动处理，费时费力，于是就提出工程化。
-工程化的实现grunt最早出现，每次操作都是文件读">
-<meta property="og:updated_time" content="2018-03-18T10:06:49.477Z">
+<meta property="og:description" content="web安全是如何提出的？随着互联网的发展，我们的个人财富、信息等都会存储在互联网上，这时就会有不少神秘人想要利用 web 网页的漏洞获取我们的财富或者利用我们的信息获得财富，内行的人给这些神秘人起了个代号，叫做 “黑客”为了保护我们的财富及信息，就提出了web安全这个概念
+web的攻击手段有哪些？目前比较出名的有XSS,CSRF,DDOS;本篇文章简单介绍一下这些手段的原理及如何防范（个人理解，可">
+<meta property="og:image" content="https://i.loli.net/2018/03/25/5ab7536bdcb51.png">
+<meta property="og:updated_time" content="2018-03-25T08:41:28.328Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="工程化">
-<meta name="twitter:description" content="工程化（What &amp;amp; Why）为了方便代码维护，我们要将相同功能的函数、对象等放入一个文件（模块），这样就会形成很多文件；但为了提高浏览器的渲染速度，我们又要尽量减少网络中请求的文件数；
-既要考虑性能，又要考虑模块化，相互矛盾，怎么搞？
-解决办法：开发时一套代码，发布到线上时一套合并压缩的代码。
-如果手动处理，费时费力，于是就提出工程化。
-工程化的实现grunt最早出现，每次操作都是文件读">
+<meta name="twitter:title" content="web安全">
+<meta name="twitter:description" content="web安全是如何提出的？随着互联网的发展，我们的个人财富、信息等都会存储在互联网上，这时就会有不少神秘人想要利用 web 网页的漏洞获取我们的财富或者利用我们的信息获得财富，内行的人给这些神秘人起了个代号，叫做 “黑客”为了保护我们的财富及信息，就提出了web安全这个概念
+web的攻击手段有哪些？目前比较出名的有XSS,CSRF,DDOS;本篇文章简单介绍一下这些手段的原理及如何防范（个人理解，可">
+<meta name="twitter:image" content="https://i.loli.net/2018/03/25/5ab7536bdcb51.png">
 
 
 
@@ -144,13 +137,13 @@
 
 
 
-  <link rel="canonical" href="https://silence-jk.github.io/2018/01/29/工程化/"/>
+  <link rel="canonical" href="https://silence-jk.github.io/2018/03/25/web安全/"/>
 
 
 
 
 
-  <title>工程化 | Silence_JK's Blog</title>
+  <title>web安全 | Silence_JK's Blog</title>
   
 
 
@@ -327,7 +320,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://silence-jk.github.io/2018/01/29/工程化/">
+    <link itemprop="mainEntityOfPage" href="https://silence-jk.github.io/2018/03/25/web安全/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Silence_JK">
@@ -344,7 +337,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">工程化</h1>
+          <h1 class="post-title" itemprop="name headline">web安全</h1>
         
 
         <div class="post-meta">
@@ -356,8 +349,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-29T17:06:27+08:00">
-                2018-01-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-25T09:24:14+08:00">
+                2018-03-25
               </time>
             
 
@@ -372,8 +365,8 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-03-18T18:06:49+08:00">
-                2018-03-18
+              <time title="更新于" itemprop="dateModified" datetime="2018-03-25T16:41:28+08:00">
+                2018-03-25
               </time>
             
           </span>
@@ -391,8 +384,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/性能与工程化/" itemprop="url" rel="index">
-                    <span itemprop="name">性能与工程化</span>
+                  <a href="/categories/安全/" itemprop="url" rel="index">
+                    <span itemprop="name">安全</span>
                   </a>
                 </span>
 
@@ -409,9 +402,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/01/29/工程化/#comments" itemprop="discussionUrl">
+                <a href="/2018/03/25/web安全/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/01/29/工程化/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/03/25/web安全/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -419,7 +412,7 @@
 
           
           
-             <span id="/2018/01/29/工程化/" class="leancloud_visitors" data-flag-title="工程化">
+             <span id="/2018/03/25/web安全/" class="leancloud_visitors" data-flag-title="web安全">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -444,7 +437,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  684字
+                  1,656字
                 </span>
               
 
@@ -460,7 +453,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  3分钟
+                  6分钟
                 </span>
               
             </div>
@@ -481,54 +474,51 @@
       
 
       
-        <h2 id="工程化（What-amp-Why）"><a href="#工程化（What-amp-Why）" class="headerlink" title="工程化（What &amp; Why）"></a>工程化（What &amp; Why）</h2><p>为了方便代码维护，我们要将相同功能的函数、对象等放入一个文件（模块），这样就会形成很多文件；<br>但为了提高浏览器的渲染速度，我们又要尽量减少网络中请求的文件数；</p>
-<p>既要考虑性能，又要考虑模块化，相互矛盾，怎么搞？</p>
-<p>解决办法：<br>开发时一套代码，发布到线上时一套合并压缩的代码。</p>
-<p>如果手动处理，费时费力，于是就提出工程化。</p>
-<h2 id="工程化的实现"><a href="#工程化的实现" class="headerlink" title="工程化的实现"></a>工程化的实现</h2><h3 id="grunt"><a href="#grunt" class="headerlink" title="grunt"></a>grunt</h3><p>最早出现，每次操作都是文件读写，慢！配置相对繁琐。</p>
-<h3 id="gulp"><a href="#gulp" class="headerlink" title="gulp"></a>gulp</h3><p>基于grunt缺点做得改进，基于文件流读写，快！配置也相对简单。</p>
-<h3 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h3><p>早期只是一个打包工具，作为gulp的插件来使用；现在发展的相对全面，有以下特点：</p>
-<ul>
-<li>任何文件都可以当模块</li>
-<li>打包体积更小</li>
-<li>打包更快</li>
-<li>默认支持 AMD，Commonjs，ES6 modules</li>
+        <h2 id="web安全是如何提出的？"><a href="#web安全是如何提出的？" class="headerlink" title="web安全是如何提出的？"></a>web安全是如何提出的？</h2><p>随着互联网的发展，我们的个人财富、信息等都会存储在互联网上，这时就会有不少神秘人想要利用 web 网页的漏洞获取我们的财富或者利用我们的信息获得财富，内行的人给这些神秘人起了个代号，叫做 “黑客”<br>为了保护我们的财富及信息，就提出了<code>web安全</code>这个概念</p>
+<h2 id="web的攻击手段有哪些？"><a href="#web的攻击手段有哪些？" class="headerlink" title="web的攻击手段有哪些？"></a>web的攻击手段有哪些？</h2><p>目前比较出名的有<code>XSS</code>,<code>CSRF</code>,<code>DDOS</code>;<br>本篇文章简单介绍一下这些手段的原理及如何防范（个人理解，可能有误）</p>
+<h2 id="XSS"><a href="#XSS" class="headerlink" title="XSS"></a>XSS</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>XSS（Cross-Site-Script）跨站脚本攻击，由于简写与<code>CSS层叠样式表</code>重复，所以就叫X；<br>XSS 的原理就是往网页中注入恶意脚本代码，当用户访问该网页时就会获取到带有恶意脚本代码的网页；通过恶意脚本，坏人就会获取到用户的登陆态信息（cookie等）<br>XSS 又可细分为反射型，存储型，DOM Base 型</p>
+<h3 id="反射型-XSS"><a href="#反射型-XSS" class="headerlink" title="反射型 XSS"></a>反射型 XSS</h3><p>反射型 XSS，又称非持久型 XSS</p>
+<h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><p>通过用户点击来将恶意脚本反射给用户</p>
+<h4 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h4><p>某购物界面地址为：<a href="http://localhost:3000/goods.html" target="_blank" rel="external">http://localhost:3000/goods.html</a><br>当搜索商品时，请求的 url 会变为 <a href="http://localhost:3000/goods.html?sort=book" target="_blank" rel="external">http://localhost:3000/goods.html?sort=book</a><br>在服务端中，会读取请求参数<code>sort</code>的值，拿到结果后返回给前端<br>如果服务端没有对请求参数做任何处理，如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">router.get(<span class="string">'/goods.html'</span>, <span class="keyword">async</span> (ctx) =&gt; &#123;</div><div class="line">  <span class="keyword">const</span> sort = ctx.query.sort</div><div class="line">  ctx.body = <span class="string">`</span></div><div class="line">    &lt;p style="font-size: 40px; padding: 10px;"&gt;当前分类： <span class="subst">$&#123;sort&#125;</span>&lt;/p&gt;</div><div class="line">    <span class="subst">$&#123;getSortGoods(sort)&#125;</span></div><div class="line">  `</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>此时，如果给 sort 的值传入<code>&lt;script&gt;console.log(document.cookie)&lt;/script&gt;</code>就可以拿到该用户的登陆态了<br>那么如何忽悠用户上当呢？<br>往网页中注入图片链接<code>&lt;a href=&#39;goods.html?sort=&lt;script&gt;alert(1)&lt;/script&gt;&#39;&gt;&lt;img src=&quot;xxx&quot; alt=&quot;嘿嘿嘿&quot;/&gt;&lt;/a&gt;</code><br>如果图片做得好，总有用户会（<del>上当</del>）点击  </p>
+<h4 id="为什么叫反射型（非持久型）"><a href="#为什么叫反射型（非持久型）" class="headerlink" title="为什么叫反射型（非持久型）"></a><strong>为什么叫反射型（非持久型）</strong></h4><p>因为是根据参数来返回值，数据并不会保留到服务器内部，所以是非持久型的；通过参数把内容反射给用户，所以叫反射型</p>
+<h4 id="如何防范"><a href="#如何防范" class="headerlink" title="如何防范"></a>如何防范</h4><p>XSS 的本质就是通过脚本攻击，所以让脚本失效就 Ok 了，最简单的做法就是转义字符<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function htmlEscape(str) &#123;</div><div class="line">  return String(str)</div><div class="line">    .replace(/&amp;/g, &apos;&amp;amp;&apos;)</div><div class="line">    .replace(/&quot;/g, &apos;&amp;quot;&apos;)</div><div class="line">    .replace(/&apos;/g, &apos;&amp;#39;&apos;)</div><div class="line">    .replace(/&lt;/g, &apos;&amp;lt;&apos;)</div><div class="line">    .replace(/&gt;/g, &apos;&amp;gt;&apos;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="存储型-XSS"><a href="#存储型-XSS" class="headerlink" title="存储型 XSS"></a>存储型 XSS</h3><p>存储型 XSS，又叫持久型 XSS</p>
+<h4 id="原理-1"><a href="#原理-1" class="headerlink" title="原理"></a>原理</h4><p>利用网页漏洞，将恶意脚本存储在服务器上，每当有用户访问时就会触发恶意脚本；常见于社交网站和博客类网站</p>
+<h4 id="举例-1"><a href="#举例-1" class="headerlink" title="举例"></a>举例</h4><p>曾经某个写博客的平台出过事，对用户评论没有做处理，直接存储到服务器。<br>若某用户评论<code>&lt;script&gt;console.log(document.cookie)&lt;/script&gt;</code>，评论会被存储在服务器的评论列表中，每当有一位新的用户访问这篇文章时，就会把评论列表遍历一遍展示出来，此时该用户的<code>cookie</code>就会打印出来；当然，坏人一般会把<code>cookie</code>发到他的服务器上</p>
+<h4 id="如何防范-1"><a href="#如何防范-1" class="headerlink" title="如何防范"></a>如何防范</h4><p>与反射型 XSS 类似，有一点要注意就是不能光在前端对用户的输入进行处理；有时坏人会在服务器端模拟请求，避开前端的转义，所以也要对服务端进行处理</p>
+<h3 id="DOM-Based型-XSS"><a href="#DOM-Based型-XSS" class="headerlink" title="DOM Based型 XSS"></a>DOM Based型 XSS</h3><h4 id="原理-2"><a href="#原理-2" class="headerlink" title="原理"></a>原理</h4><p>发生在浏览器端 DOM 解析的时候，由于 Javascript 修改页面 DOM 结构而发起的攻击；So，如果页面的 JS 脚本没有漏洞就不会发起该攻击</p>
+<h4 id="举例-2"><a href="#举例-2" class="headerlink" title="举例"></a>举例</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;div id=<span class="string">"content"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;input type=<span class="string">"text"</span> id=<span class="string">"text"</span>/&gt;</div><div class="line">&lt;button onclick="addText()"&gt;Add&lt;/button&gt;</div><div class="line"><span class="comment">//往页面中添加文本</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">addText</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> htmlText = <span class="string">'&lt;a href="'</span> + $(<span class="string">'#text'</span>).val() +<span class="string">'"&gt;hhh&lt;/a&gt;'</span></div><div class="line">  $(<span class="string">'#content'</span>).html(htmlText)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>输入 <code>&quot; onclick=&quot;alert(1)&quot; //</code> 查看</p>
+<h4 id="如何防范-2"><a href="#如何防范-2" class="headerlink" title="如何防范"></a>如何防范</h4><p>把用户输入的敏感属性（onclick等）用 ‘’ 替代掉即可</p>
+<h3 id="XSS钓鱼"><a href="#XSS钓鱼" class="headerlink" title="XSS钓鱼"></a>XSS钓鱼</h3><h4 id="如何拿XSS钓鱼？"><a href="#如何拿XSS钓鱼？" class="headerlink" title="如何拿XSS钓鱼？"></a>如何拿XSS钓鱼？</h4><ul>
+<li>通过评论在页面注入钓鱼网站链接 <code>&lt;a href=&quot;http://www.hacker.com&quot;&gt;王者荣耀热门活动&lt;/a&gt;</code></li>
+<li>用户浏览钓鱼网站，输入账号、密码</li>
+<li>账号、密码发送至坏人的服务器上</li>
+<li>完成</li>
 </ul>
-<h2 id="webpack使用"><a href="#webpack使用" class="headerlink" title="webpack使用"></a>webpack使用</h2><h3 id="添加配置文件-webpack-config-js"><a href="#添加配置文件-webpack-config-js" class="headerlink" title="添加配置文件 webpack.config.js"></a>添加配置文件 webpack.config.js</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  <span class="attr">entry</span>: <span class="string">'./src/js/index.js'</span>, <span class="comment">//入口文件</span></div><div class="line">  output: &#123;</div><div class="line">    <span class="attr">filename</span>: <span class="string">'bundle.js'</span>,</div><div class="line">    <span class="attr">path</span>: path.resolve(__dirname, <span class="string">'./dist'</span>) <span class="comment">//文件处理后的输出目录</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">module</span>: &#123;</div><div class="line">   </div><div class="line">  &#125;,</div><div class="line">  <span class="attr">plugins</span>: [</div><div class="line"></div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="module-模块"><a href="#module-模块" class="headerlink" title="module 模块"></a>module 模块</h3><p>主要是针对特定类型的单文件进行处理</p>
+<h2 id="CSRF"><a href="#CSRF" class="headerlink" title="CSRF"></a>CSRF</h2><h3 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h3><p>CSRF（Cross-site-request-forgery）跨站点请求伪造；攻击者通过模拟用户的登陆态来进行一系列操作。</p>
+<h3 id="举例-3"><a href="#举例-3" class="headerlink" title="举例"></a>举例</h3><p><img src="https://i.loli.net/2018/03/25/5ab7536bdcb51.png" alt="CSRF"></p>
 <ul>
-<li>css-loader .css -&gt; 可以加载的模块</li>
-<li>babel-loader .es6 -&gt; .js</li>
-<li>scss-loader .scss -&gt; .css</li>
+<li>用户登录银行页面</li>
+<li>银行的服务器会给用户设置一个唯一标识的 cookie</li>
+<li>攻击者会弄一个图片诱导你去点击</li>
+<li>如果你登陆完银行没有退出登录，点击完上个页面，攻击者就会利用你的cookie 来发起转账请求，再一看，钱就没了</li>
 </ul>
-<p>在上面代码基础上增加打包css文件功能</p>
-<ul>
-<li>npm 安装 style-loader 和 css-loader 模块</li>
-<li>增加打包 css 的配置  </li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  <span class="attr">entry</span>: <span class="string">'./src/js/index.js'</span>, <span class="comment">//入口文件</span></div><div class="line">  output: &#123;</div><div class="line">    <span class="attr">filename</span>: <span class="string">'bundle.js'</span>,</div><div class="line">    <span class="attr">path</span>: path.resolve(__dirname, <span class="string">'./dist'</span>) <span class="comment">//文件处理后的输出目录</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">module</span>: &#123;</div><div class="line">    <span class="attr">rules</span>: [</div><div class="line">      &#123;</div><div class="line">        <span class="attr">test</span>: <span class="regexp">/\.css$/</span>,</div><div class="line">         <span class="attr">use</span>: [<span class="string">'style-loader'</span>, <span class="string">'css-loader'</span>]  </div><div class="line">      &#125;</div><div class="line">    ]   </div><div class="line">  &#125;,</div><div class="line">  <span class="attr">plugins</span>: [</div><div class="line"></div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="plugins-模块"><a href="#plugins-模块" class="headerlink" title="plugins 模块"></a>plugins 模块</h3><p>来完成 loader 模块无法完成的事,比如：</p>
-<ul>
-<li>压缩js</li>
-<li>压缩图片</li>
-<li>单独分离出css文件</li>
+<h3 id="防御手段"><a href="#防御手段" class="headerlink" title="防御手段"></a>防御手段</h3><h4 id="referer-验证"><a href="#referer-验证" class="headerlink" title="referer 验证"></a>referer 验证</h4><p>用户访问页面时，在请求头中都会带有<code>referer</code>这个字段，表示用户从哪个页面发起的请求，如果不是同域下的，则拒绝处理请求；上述过程是从坏人的服务器上发起的请求，<code>referer</code>不是来自同域，就会拒绝处理请求<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// referer 判断，防止 CSRF</span></div><div class="line"><span class="keyword">const</span> isLegalReferer = <span class="function">(<span class="params">ctx</span>) =&gt;</span> &#123;</div><div class="line">  <span class="keyword">const</span> referer = ctx.request.header.referer</div><div class="line">  <span class="keyword">return</span> <span class="regexp">/https?:\/\/localhost:3000/</span>.test(referer)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="token-验证"><a href="#token-验证" class="headerlink" title="token 验证"></a>token 验证</h4><p>由于请求头<code>referer</code>可能会被模拟，所以 token 验证更加常用<br>在客户端发起请求时设置<code>token</code>为用算法加密过的 cookie，在服务器端用同样的算法计算出<code>token</code>，如果不一致，则拒绝处理请求；因为跨域不会读到本域下的 cookie，所以比较安全</p>
+<h2 id="XSS-蠕虫"><a href="#XSS-蠕虫" class="headerlink" title="XSS 蠕虫"></a>XSS 蠕虫</h2><h3 id="概念-2"><a href="#概念-2" class="headerlink" title="概念"></a>概念</h3><p>XSS 蠕虫本质上是 XSS + CSRF；不需要用户点击，即可大范围传播。<br>见上图银行转账的例子，如果在 bank.com 里直接注入恶意脚本，那么第三步和第四步就可以省略了；用户就算不点击，也可直接在本页面中就可发起转账攻击。</p>
+<h3 id="如何防范-3"><a href="#如何防范-3" class="headerlink" title="如何防范"></a>如何防范</h3><p>既然本质上是 XSS + CSRF，那么做好这两个的防范即可。对于比较重要的请求，可以通过给用户发送验证码来进行确认</p>
+<h2 id="DDOS-攻击"><a href="#DDOS-攻击" class="headerlink" title="DDOS 攻击"></a>DDOS 攻击</h2><h3 id="概念-3"><a href="#概念-3" class="headerlink" title="概念"></a>概念</h3><p>分布式拒绝服务（Distributed Denial of Service），坏人通过操纵大量电脑发起非正常请求来耗尽页面资源，使页面服务不能正常运行，从而导致正常访问的人无法访问</p>
+<h3 id="如何防范-4"><a href="#如何防范-4" class="headerlink" title="如何防范"></a>如何防范</h3><ul>
+<li>验证码</li>
+<li>通过 id 来限制请求频率</li>
+<li>扩容加带宽</li>
 <li>…</li>
 </ul>
-<p>在上面代码基础上实现压缩js功能</p>
-<ul>
-<li>npm 安装 uglifyjs-webpack-plugin</li>
-<li>增加插件配置  </li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</div><div class="line"><span class="comment">//插件一般都是返回一个类，用时用 new</span></div><div class="line"><span class="keyword">var</span> UglifyJsPlugin = <span class="built_in">require</span>(<span class="string">'uglifyjs-webpack-plugin'</span>);</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  <span class="attr">entry</span>: <span class="string">'./src/js/index.js'</span>,</div><div class="line">  <span class="attr">output</span>: &#123;</div><div class="line">    <span class="attr">filename</span>: <span class="string">'bundle.js'</span>,</div><div class="line">    <span class="attr">path</span>: path.resolve(__dirname, <span class="string">'./dist'</span>)</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">module</span>: &#123;</div><div class="line">    <span class="attr">rules</span>: [</div><div class="line">      &#123;</div><div class="line">        <span class="attr">test</span>: <span class="regexp">/\.css$/</span>,</div><div class="line">         <span class="attr">use</span>: [<span class="string">'style-loader'</span>, <span class="string">'css-loader'</span>]  </div><div class="line">      &#125;,</div><div class="line">    ]</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">plugins</span>: [</div><div class="line">    <span class="keyword">new</span> UglifyJsPlugin()</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="自动刷新"><a href="#自动刷新" class="headerlink" title="自动刷新"></a>自动刷新</h3><p>本地开发流程<br>保存代码 -&gt; webpack构建 -&gt; 刷新浏览器<br>webpack-dev-server 可以自动完成这个过程<br>与服务端 node 的 node-supervisior 类似</p>
-<p>操作步骤：</p>
-<ul>
-<li>先用 npm 安装 html-wepack-plugin 插件，将 index.html 也加入构建</li>
-<li>将 index.html 从根目录移至 src，并删除其中 script 及 link 标签</li>
-<li>在 webpack.config.js 中配置该插件 </li>
-<li>此时所有html,css,js源代码都在 src 目录下，打包后的文件都在 dist 目录下</li>
-<li>全局安装 webpack-dev-server</li>
-<li>运行 webpack-dev-server –open，修改 src 下文件，看是否自动刷新 </li>
+<h3 id="一些资料"><a href="#一些资料" class="headerlink" title="一些资料"></a>一些资料</h3><ul>
+<li><a href="https://www.zhihu.com/question/19581905" target="_blank" rel="external">互联网创业公司如何防御DDOS攻击</a></li>
+<li><a href="https://www.leiphone.com/news/201509/9zGlIDvLhwguqOtg.html" target="_blank" rel="external">漫画告诉你什么时DDOS攻击</a></li>
 </ul>
 
       
@@ -547,7 +537,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/webpack/" rel="tag"># webpack</a>
+            <a href="/tags/XSS-CSRF/" rel="tag"># XSS,CSRF</a>
           
         </div>
       
@@ -560,8 +550,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/13/模块化/" rel="next" title="模块化开发">
-                <i class="fa fa-chevron-left"></i> 模块化开发
+              <a href="/2018/03/18/encodeURI与encodeURIComponent/" rel="next" title="encodeURI与encodeURIComponent">
+                <i class="fa fa-chevron-left"></i> encodeURI与encodeURIComponent
               </a>
             
           </div>
@@ -569,10 +559,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/18/encodeURI与encodeURIComponent/" rel="prev" title="encodeURI与encodeURIComponent">
-                encodeURI与encodeURIComponent <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -732,7 +718,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#工程化（What-amp-Why）"><span class="nav-number">1.</span> <span class="nav-text">工程化（What & Why）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工程化的实现"><span class="nav-number">2.</span> <span class="nav-text">工程化的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#grunt"><span class="nav-number">2.1.</span> <span class="nav-text">grunt</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gulp"><span class="nav-number">2.2.</span> <span class="nav-text">gulp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#webpack"><span class="nav-number">2.3.</span> <span class="nav-text">webpack</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#webpack使用"><span class="nav-number">3.</span> <span class="nav-text">webpack使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加配置文件-webpack-config-js"><span class="nav-number">3.1.</span> <span class="nav-text">添加配置文件 webpack.config.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#module-模块"><span class="nav-number">3.2.</span> <span class="nav-text">module 模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#plugins-模块"><span class="nav-number">3.3.</span> <span class="nav-text">plugins 模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动刷新"><span class="nav-number">3.4.</span> <span class="nav-text">自动刷新</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#web安全是如何提出的？"><span class="nav-number">1.</span> <span class="nav-text">web安全是如何提出的？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web的攻击手段有哪些？"><span class="nav-number">2.</span> <span class="nav-text">web的攻击手段有哪些？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XSS"><span class="nav-number">3.</span> <span class="nav-text">XSS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念"><span class="nav-number">3.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反射型-XSS"><span class="nav-number">3.2.</span> <span class="nav-text">反射型 XSS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原理"><span class="nav-number">3.2.1.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#举例"><span class="nav-number">3.2.2.</span> <span class="nav-text">举例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么叫反射型（非持久型）"><span class="nav-number">3.2.3.</span> <span class="nav-text">为什么叫反射型（非持久型）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何防范"><span class="nav-number">3.2.4.</span> <span class="nav-text">如何防范</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#存储型-XSS"><span class="nav-number">3.3.</span> <span class="nav-text">存储型 XSS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原理-1"><span class="nav-number">3.3.1.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#举例-1"><span class="nav-number">3.3.2.</span> <span class="nav-text">举例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何防范-1"><span class="nav-number">3.3.3.</span> <span class="nav-text">如何防范</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM-Based型-XSS"><span class="nav-number">3.4.</span> <span class="nav-text">DOM Based型 XSS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原理-2"><span class="nav-number">3.4.1.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#举例-2"><span class="nav-number">3.4.2.</span> <span class="nav-text">举例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何防范-2"><span class="nav-number">3.4.3.</span> <span class="nav-text">如何防范</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#XSS钓鱼"><span class="nav-number">3.5.</span> <span class="nav-text">XSS钓鱼</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#如何拿XSS钓鱼？"><span class="nav-number">3.5.1.</span> <span class="nav-text">如何拿XSS钓鱼？</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSRF"><span class="nav-number">4.</span> <span class="nav-text">CSRF</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念-1"><span class="nav-number">4.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#举例-3"><span class="nav-number">4.2.</span> <span class="nav-text">举例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#防御手段"><span class="nav-number">4.3.</span> <span class="nav-text">防御手段</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#referer-验证"><span class="nav-number">4.3.1.</span> <span class="nav-text">referer 验证</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#token-验证"><span class="nav-number">4.3.2.</span> <span class="nav-text">token 验证</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XSS-蠕虫"><span class="nav-number">5.</span> <span class="nav-text">XSS 蠕虫</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念-2"><span class="nav-number">5.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何防范-3"><span class="nav-number">5.2.</span> <span class="nav-text">如何防范</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DDOS-攻击"><span class="nav-number">6.</span> <span class="nav-text">DDOS 攻击</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念-3"><span class="nav-number">6.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何防范-4"><span class="nav-number">6.2.</span> <span class="nav-text">如何防范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一些资料"><span class="nav-number">6.3.</span> <span class="nav-text">一些资料</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -886,9 +872,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://silence-jk.github.io/2018/01/29/工程化/';
-          this.page.identifier = '2018/01/29/工程化/';
-          this.page.title = '工程化';
+          this.page.url = 'https://silence-jk.github.io/2018/03/25/web安全/';
+          this.page.identifier = '2018/03/25/web安全/';
+          this.page.title = 'web安全';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://Silence_JK.disqus.com/embed.js';
